@@ -1,0 +1,34 @@
+package:
+  name: pyprind
+  version: "2.10.0"
+
+source:
+  fn: PyPrind-2.10.0.tar.gz
+  url: https://pypi.python.org/packages/61/62/6ece74ccd1daf063149c276fa925f818d2e2abfd0da0fcff2a64b389302f/PyPrind-2.10.0.tar.gz
+  md5: b8d2e67c66ee36bc106042c38e9127c5
+
+build:
+  noarch_python: True
+  number: 2
+
+requirements:
+  build:
+    - psutil
+    - python
+    - setuptools
+
+  run:
+    - psutil
+    - python
+
+test:
+  imports:
+    - pyprind
+
+about:
+  home: https://github.com/rasbt/pyprind
+  license: BSD 3-Clause
+  license_file: LICENSE
+  summary: 'The PyPrind (Python Progress Indicator) module provides a progress bar and a percentage indicator object that let you track the progress of a loop structure or other iterative computation.'
+  license_family: BSD
+  dev_url: https://github.com/rasbt/pyprind

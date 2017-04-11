@@ -1,0 +1,36 @@
+package:
+  name: bw2-lcimpact
+  version: "0.1.1"
+
+source:
+  fn: bw2-lcimpact-0.1.1.tar.gz
+  url: https://pypi.python.org/packages/19/fc/c568695f7348a72f4d75f453cc7ce93d271d6c27c8ba3ae316136ecc89bb/bw2-lcimpact-0.1.1.tar.gz
+  md5: 343b16aae33f3dde109dbbb1397cf9a5
+
+build:
+  noarch_python: True
+
+  # If this is a new build for the same version, increment the build
+  # number. If you do not include this key, it defaults to 0.
+  # number: 1
+
+requirements:
+  build:
+    - python
+    - brightway2
+    - wrapt
+
+  run:
+    - python
+    - brightway2
+    - wrapt
+
+test:
+  imports:
+    - bw2_lcimpact
+
+about:
+  home: https://bitbucket.org/cmutel/brightway2-regional
+  license: BSD License
+  summary: ''
+  license_family: BSD

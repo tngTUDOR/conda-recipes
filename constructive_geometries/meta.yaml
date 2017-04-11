@@ -1,0 +1,37 @@
+package:
+  name: constructive_geometries
+  version: "0.4.1"
+
+source:
+  fn: constructive_geometries-0.4.1.tar.gz
+  url: https://pypi.python.org/packages/dc/a6/3889a83120575684c172574d305a09f39e7d59c22a842407227198d3606a/constructive_geometries-0.4.1.tar.gz#md5=6a3b4bbfcad1996f99a9b9575688f292
+  md5: 6a3b4bbfcad1996f99a9b9575688f292
+
+build:
+  noarch_python: True
+  # If this is a new build for the same version, increment the build
+  # number. If you do not include this key, it defaults to 0.
+  # number: 1
+
+requirements:
+  build:
+    - python
+    - fiona
+    - setuptools
+    - shapely
+
+  run:
+    - python
+    - fiona
+    - shapely
+
+test:
+  # Python imports
+  imports:
+    - constructive_geometries
+
+about:
+  home: https://bitbucket.org/cmutel/py-constructive-geometries
+  license: BSD License
+  summary: ''
+  license_family: BSD

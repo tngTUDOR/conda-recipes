@@ -1,0 +1,41 @@
+package:
+  name: bw2calc
+  version: "1.6.1"
+
+source:
+  fn: bw2calc-1.6.1.tar.gz
+  url: https://pypi.python.org/packages/63/c2/cbecf46344c6183c6f3a809139fa89d01eadc6e8649bfd33a53efef59f66/bw2calc-1.6.1.tar.gz
+  md5: 2eb1e823ebca953581ca8a6cc5d39b51
+
+build:
+  noarch_python: True
+  number: 1
+
+requirements:
+  build:
+    - python
+    - setuptools
+    - eight
+    - numpy
+    - scipy
+    - stats_arrays
+
+  run:
+    - python
+    - eight
+    - numpy
+    - scipy
+    - stats_arrays
+
+test:
+  imports:
+    - bw2calc
+
+about:
+  home: https://brightwaylca.org/
+  license: BSD 2-Clause
+  license_file: LICENSE.txt
+  summary: 'The calculation engine for the Brightway2 life cycle assessment framework'
+  license_family: BSD
+  doc_url: https://docs.brightwaylca.org/
+  dev_url: https://bitbucket.org/cmutel/brightway2-calc/

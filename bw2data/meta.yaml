@@ -1,0 +1,69 @@
+package:
+  name: bw2data
+  version: "2.4.3.1"
+
+source:
+  fn: bw2data-2.4.3.1.tar.gz
+  url: https://pypi.python.org/packages/92/ed/32805cdd4112793a62eb9b7eecd9ffc76dbbe545b59958f2943314833511/bw2data-2.4.3.1.tar.gz
+  md5: 1eac115627e78c6ac2011542b7e1137f
+
+build:
+  noarch_python: True
+  # number: 1
+
+requirements:
+  build:
+    - appdirs
+    - bw2parameters
+    - docopt
+    - eight
+    - fasteners
+    - future
+    - lxml
+    - numpy
+    - peewee
+    - psutil
+    - pyprind
+    - python
+    - requests
+    - scipy
+    - setuptools
+    - stats_arrays
+    - unicodecsv
+    - voluptuous
+    - whoosh
+    - wrapt
+
+  run:
+    - appdirs
+    - bw2parameters
+    - docopt
+    - eight
+    - fasteners
+    - future
+    - lxml
+    - numpy
+    - peewee
+    - psutil
+    - pyprind
+    - python
+    - requests
+    - scipy
+    - stats_arrays
+    - unicodecsv
+    - voluptuous
+    - whoosh
+    - wrapt
+
+test:
+  imports:
+    - bw2data
+
+about:
+  home: https://brightwaylca.org/
+  license: BSD 2-Clause
+  license_file: LICENSE.txt
+  summary: 'Data management for the Brightway2 life cycle assessment framework'
+  license_family: BSD
+  doc_url: https://docs.brightwaylca.org/
+  dev_url: https://bitbucket.org/cmutel/brightway2-data/

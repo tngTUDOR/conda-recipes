@@ -1,0 +1,39 @@
+package:
+  name: bw2data
+  version: "0.4.1"
+
+source:
+  fn: stats_arrays-0.4.1.tar.gz
+  url: https://pypi.python.org/packages/69/93/5113dc363240871f54cc676b3f38af6d4077e89a76800217a6a53de69adc/stats_arrays-0.4.1.tar.gz
+  md5: a4bfea41defc63f70b141b1e9440d437
+
+build:
+  noarch_python: True
+  number: 2
+
+requirements:
+  build:
+    - numpy
+    - python
+    - scipy
+    - nose
+    - setuptools
+
+  run:
+    - numpy
+    - python
+    - scipy
+    - nose
+
+test:
+  imports:
+    - stats_arrays
+
+about:
+  home: http://stats-arrays.readthedocs.io/en/latest/
+  license: BSD 2-Clause
+  license_file: LICENSE.txt
+  summary: 'The stats_arrays package provides a standard NumPy array interface for defining uncertain parameters used in models, and classes for Monte Carlo sampling.'
+  license_family: BSD
+  doc_url: http://stats-arrays.readthedocs.io/en/latest/
+  dev_url: https://bitbucket.org/cmutel/stats_arrays

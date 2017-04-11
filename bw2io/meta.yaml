@@ -1,0 +1,62 @@
+package:
+  name: bw2io
+  version: "0.5.8"
+
+source:
+  fn: bw2io-0.5.8.tar.gz
+  url: https://pypi.python.org/packages/ac/45/447dddc80126bcbb40864015f1ba0a51ef0620ba0c0826e8cd0969104979/bw2io-0.5.8.tar.gz
+  md5: 591502694b9be790aa3d598b5d8e54e4
+
+build:
+  noarch_python: True
+  # number: 1
+
+requirements:
+  build:
+    - python
+    - setuptools
+    - bw2calc
+    - bw2data
+    - lxml
+    - numpy
+    - psutil
+    - pyprind
+    - scipy
+    - stats_arrays
+    - unidecode
+    - voluptuous
+    - xlsxwriter
+    - xlrd
+
+  run:
+    - python
+    - bw2calc
+    - bw2data
+    - lxml
+    - numpy
+    - psutil
+    - pyprind
+    - scipy
+    - stats_arrays
+    - unidecode
+    - voluptuous
+    - xlsxwriter
+    - xlrd
+
+test:
+  imports:
+    - bw2io
+    - bw2io.data
+    - bw2io.export
+    - bw2io.extractors
+    - bw2io.importers
+    - bw2io.strategies
+
+about:
+  home: https://brightwaylca.org/
+  license: BSD 2-Clause
+  license_file: LICENSE.txt
+  summary: 'Tools for importing and export life cycle inventory databases'
+  license_family: BSD
+  doc_url: https://docs.brightwaylca.org/
+  dev_url: https://bitbucket.org/cmutel/brightway2-io

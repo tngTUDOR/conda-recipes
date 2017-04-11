@@ -1,0 +1,87 @@
+package:
+  name: bw2temporalis
+  version: "0.9.2"
+
+source:
+  fn: bw2temporalis-0.9.2.tar.gz
+  url: https://pypi.python.org/packages/2b/86/d575ebfd4e26d14e416cd8bb4fc07b7313375f71f11daf79f0cd7893b89f/bw2temporalis-0.9.2.tar.gz
+  md5: 86ca6ffef31fc3cac996955e52f856fb
+#  patches:
+   # List any patch files here
+   # - fix.patch
+
+# build:
+  # noarch_python: True
+  # preserve_egg_dir: True
+  # entry_points:
+    # Put any entry points (scripts to be generated automatically) here. The
+    # syntax is module:function.  For example
+    #
+    # - bw2temporalis = bw2temporalis:main
+    #
+    # Would create an entry point called bw2temporalis that calls bw2temporalis.main()
+
+
+  # If this is a new build for the same version, increment the build
+  # number. If you do not include this key, it defaults to 0.
+  # number: 1
+
+requirements:
+  build:
+    - python
+    - setuptools
+    - arrow
+    - eight
+    - brightway2
+    - bw2analyzer
+    - bw2calc >=0.11
+    - bw2data >=0.12
+    - bw2speedups >=2.0
+    - numexpr
+    - numpy
+    - scipy
+    - stats_arrays
+
+  run:
+    - python
+    - arrow
+    - eight
+    - brightway2
+    - bw2analyzer
+    - bw2calc >=0.11
+    - bw2data >=0.12
+    - bw2speedups >=2.0
+    - numexpr
+    - numpy
+    - scipy
+    - stats_arrays
+
+test:
+  # Python imports
+  imports:
+    - bw2temporalis
+    - bw2temporalis.cofire
+    - bw2temporalis.examples
+    - bw2temporalis.tests
+
+  # commands:
+    # You can put test commands to be run here.  Use this to test that the
+    # entry points work.
+
+
+  # You can also put a file called run_test.py in the recipe that will be run
+  # at test time.
+
+  # requires:
+    # Put any additional test requirements here.  For example
+    # - nose
+
+about:
+  home: https://bitbucket.org/cmutel/brightway2-temporalis
+  license: BSD License
+  summary: 'Provide a dynamic LCA calculations for the Brightway2 life cycle assessment framework'
+  license_family: BSD
+
+# See
+# http://docs.continuum.io/conda/build.html for
+# more information about meta.yaml

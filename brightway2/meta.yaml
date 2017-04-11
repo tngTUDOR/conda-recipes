@@ -1,0 +1,80 @@
+package:
+  name: brightway2
+  version: "2.1"
+
+source:
+  fn: brightway2-2.1.tar.gz
+  url: https://pypi.python.org/packages/fc/5b/95fbcc3b9b29ac2dad92979c7845de5091ebd1becce5240a41741ac33d05/brightway2-2.1.tar.gz
+  md5: b207e6adb4ba3205bbb2a6c342f9d3b5
+
+build:
+  noarch_python: True
+  number: 3
+
+requirements:
+  build:
+    - python
+    - setuptools
+    - appdirs
+    - asteval
+    - bw2analyzer
+    - bw2calc
+    - bw2data
+    - bw2io
+    - bw2parameters
+    - docopt
+    - eight
+    - flask
+    - future
+    - lxml
+    - numpy
+    - peewee >=2.8
+    - psutil
+    - pypardiso
+    - pyprind
+    - requests
+    - scipy
+    - stats_arrays
+    - unicodecsv
+    - voluptuous
+    - whoosh
+    - xlrd
+    - xlsxwriter
+
+  run:
+    - python
+    - appdirs
+    - asteval
+    - bw2analyzer
+    - bw2calc
+    - bw2data
+    - bw2io
+    - bw2parameters
+    - docopt
+    - eight
+    - flask
+    - future
+    - lxml
+    - numpy
+    - peewee >=2.8
+    - psutil
+    - pypardiso
+    - pyprind
+    - requests
+    - scipy
+    - stats_arrays
+    - unicodecsv
+    - voluptuous
+    - whoosh
+    - xlrd
+    - xlsxwriter
+
+test:
+  imports:
+    - brightway2
+
+about:
+  home: https://bitbucket.org/cmutel/brightway2
+  license: BSD License
+  summary: 'Open source framework for life cycle assessment'
+  license_family: BSD
