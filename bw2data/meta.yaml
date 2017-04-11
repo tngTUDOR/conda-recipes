@@ -1,15 +1,20 @@
+{% set name = "bw2data" %}
+{% set version = "2.4.3.1" %}
+{% set sha256 = "dcfe5a97a6d0afb72fa9723be9b886da5d267963db0e08e495185fdab869e09c" %}
+
 package:
-  name: bw2data
-  version: "2.4.3.1"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  fn: bw2data-2.4.3.1.tar.gz
-  url: https://pypi.python.org/packages/92/ed/32805cdd4112793a62eb9b7eecd9ffc76dbbe545b59958f2943314833511/bw2data-2.4.3.1.tar.gz
-  md5: 1eac115627e78c6ac2011542b7e1137f
+  fn: {{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: {{ sha256 }}
 
 build:
   noarch_python: True
-  # number: 1
+  number: 1
+  script: python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
   build:
@@ -57,7 +62,7 @@ requirements:
 
 test:
   imports:
-    - bw2data
+    - {{ name }}
 
 about:
   home: https://brightwaylca.org/

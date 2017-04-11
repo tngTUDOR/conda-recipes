@@ -1,51 +1,56 @@
+{% set name = "bw2io" %}
+{% set version = "0.5.8.1" %}
+{% set sha256 = "232b4c5b0ca342ab86060d941ecfbbd8949c2c97fb1b0c7bd9a880f7cde6fea6" %}
+
 package:
-  name: bw2io
-  version: "0.5.8"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  fn: bw2io-0.5.8.tar.gz
-  url: https://pypi.python.org/packages/ac/45/447dddc80126bcbb40864015f1ba0a51ef0620ba0c0826e8cd0969104979/bw2io-0.5.8.tar.gz
-  md5: 591502694b9be790aa3d598b5d8e54e4
+  fn: {{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: {{ sha256 }}
 
 build:
   noarch_python: True
-  # number: 1
+  number: 1
+  script: python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
   build:
-    - python
-    - setuptools
     - bw2calc
     - bw2data
     - lxml
     - numpy
     - psutil
     - pyprind
+    - python
     - scipy
+    - setuptools
     - stats_arrays
     - unidecode
     - voluptuous
-    - xlsxwriter
     - xlrd
+    - xlsxwriter
 
   run:
-    - python
     - bw2calc
     - bw2data
     - lxml
     - numpy
     - psutil
     - pyprind
+    - python
     - scipy
     - stats_arrays
     - unidecode
     - voluptuous
-    - xlsxwriter
     - xlrd
+    - xlsxwriter
 
 test:
   imports:
-    - bw2io
+    - {{ name }}
     - bw2io.data
     - bw2io.export
     - bw2io.extractors

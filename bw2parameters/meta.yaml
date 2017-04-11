@@ -1,6 +1,6 @@
-{% set name = "bw2calc" %}
-{% set version = "1.6.1" %}
-{% set sha256 = "e6b9f65d25b448fa3350e72dce710dc0f622eb08cefe1cf30252b34ea38532d8" %}
+{% set name = "bw2parameters" %}
+{% set version = "0.5.2" %}
+{% set sha256 = "8de3d5d2de03c2ddd054f65ec795335cad0b0e405f6f4d09c1e578de2ad542c3" %}
 
 package:
   name: {{ name|lower }}
@@ -18,29 +18,24 @@ build:
 
 requirements:
   build:
+    - asteval
+    - numpy
     - python
     - setuptools
-    - eight
-    - numpy
-    - scipy
-    - stats_arrays
 
   run:
-    - python
-    - eight
+    - asteval
     - numpy
-    - scipy
-    - stats_arrays
+    - python
 
 test:
   imports:
     - {{ name }}
 
 about:
-  home: https://brightwaylca.org/
+  home: https://bitbucket.org/cmutel/brightway2-parameters
   license: BSD 2-Clause
   license_file: LICENSE.txt
-  summary: 'The calculation engine for the Brightway2 life cycle assessment framework'
+  summary: 'Library for storing, validating, and calculating with parameters. Designed to work with the Brightway2 life cycle assessment framework, but is generic enough to work in other use cases.'
   license_family: BSD
-  doc_url: https://docs.brightwaylca.org/
-  dev_url: https://bitbucket.org/cmutel/brightway2-calc/
+  dev_url: https://bitbucket.org/cmutel/brightway2-parameters

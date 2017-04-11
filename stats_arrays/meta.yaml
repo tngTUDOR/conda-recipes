@@ -1,15 +1,20 @@
+{% set name = "stats_arrays" %}
+{% set version = "0.4.1" %}
+{% set sha256 = "6cfa17e7e87a1820bedea47fa0ded46c5d762d2d6ebfc157a7b6a46cdcfc85df" %}
+
 package:
-  name: bw2data
-  version: "0.4.1"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  fn: stats_arrays-0.4.1.tar.gz
-  url: https://pypi.python.org/packages/69/93/5113dc363240871f54cc676b3f38af6d4077e89a76800217a6a53de69adc/stats_arrays-0.4.1.tar.gz
-  md5: a4bfea41defc63f70b141b1e9440d437
+  fn: {{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: {{ sha256 }}
 
 build:
   noarch_python: True
-  number: 2
+  number: 3
+  script: python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
   build:

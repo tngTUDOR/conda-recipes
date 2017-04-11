@@ -1,0 +1,53 @@
+{% set name = "bw2analyzer" %}
+{% set version = "0.9.3" %}
+{% set sha256 = "e328542874776f76966b89b3772ebecc704078a1ecf88c5f73d1b2e1dcfe0f25" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  fn: {{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: {{ sha256 }}
+
+build:
+  noarch_python: True
+  number: 0
+  script: python setup.py install --single-version-externally-managed --record record.txt
+
+requirements:
+  build:
+    - bw2calc
+    - bw2data
+    - matplotlib
+    - numpy
+    - pyprind
+    - stats_arrays
+    - eight
+    - python
+    - requests
+    - scipy
+    - setuptools
+
+  run:
+    - bw2calc
+    - bw2data
+    - matplotlib
+    - numpy
+    - pyprind
+    - stats_arrays
+    - eight
+    - python
+    - requests
+    - scipy
+
+test:
+  imports:
+    - {{ name }}
+
+about:
+  home: https://bitbucket.org/cmutel/brightway2-analyzer
+  license: BSD License
+  summary: 'UNKNOWN'
+  license_family: BSD
