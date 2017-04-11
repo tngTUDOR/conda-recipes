@@ -1,0 +1,37 @@
+{% set name = "voluptuous" %}
+{% set version = "0.9.3" %}
+{% set sha256 = "ed5a11fda273754caabb6becd5fe172ee2621cd2c8ff8279433173bb7b0ec568" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  fn: {{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: {{ sha256 }}
+
+build:
+  noarch_python: True
+  number: 1
+  script: python setup.py install --single-version-externally-managed --record record.txt
+
+requirements:
+  build:
+    - python
+    - setuptools
+
+  run:
+    - python
+
+test:
+  imports:
+    - {{ name }}
+
+about:
+  home: https://github.com/yadutaf/voluptuous
+  license: BSD 3-Clause
+  license_file: COPYING
+  summary: 'Voluptuous, despite the name, is a Python data validation library'
+  license_family: BSD
+  dev_url: https://github.com/yadutaf/voluptuous
