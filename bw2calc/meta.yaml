@@ -12,8 +12,8 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  noarch_python: True
-  number: 2
+  noarch: python
+  number: 6
   script: python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:

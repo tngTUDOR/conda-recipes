@@ -1,0 +1,39 @@
+{% set name = "PyPrind" %}
+{% set version = "2.10.0" %}
+{% set sha256 = "3ca1bd20060b9a9cccb12565bd998444f0e06318d917c4a03b429eb4a7da5514" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  fn: {{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: {{ sha256 }}
+
+build:
+  noarch_python: True
+  number: 0
+  script: python setup.py install --single-version-externally-managed --record record.txt
+
+requirements:
+  build:
+    - psutil
+    - python
+    - setuptools
+
+  run:
+    - psutil
+    - python
+
+test:
+  imports:
+    - {{ name|lower }}
+
+about:
+  home: https://github.com/rasbt/pyprind
+  license: BSD 3-Clause
+  license_file: LICENSE
+  summary: 'PyPrind - Python Progress Indicator Utility'
+  license_family: BSD
+  dev_url: https://github.com/rasbt/pyprind
