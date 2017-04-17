@@ -1,6 +1,6 @@
 {% set name = "bw2data" %}
-{% set version = "2.4.3.1" %}
-{% set sha256 = "dcfe5a97a6d0afb72fa9723be9b886da5d267963db0e08e495185fdab869e09c" %}
+{% set version = "2.4.4" %}
+{% set sha256 = "4fd504c2997efa4b4646c7570983d50a8944b61b0d4e085a25ce6c15ab094d24" %}
 
 package:
   name: {{ name|lower }}
@@ -13,7 +13,7 @@ source:
 
 build:
   noarch: python
-  number: 2
+  number: 0
   script: python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
@@ -66,7 +66,7 @@ test:
 
 about:
   home: https://brightwaylca.org/
-  license: BSD 2-Clause
+  license: BSD 3-Clause
   license_file: LICENSE.txt
   summary: 'Data management for the Brightway2 life cycle assessment framework'
   license_family: BSD

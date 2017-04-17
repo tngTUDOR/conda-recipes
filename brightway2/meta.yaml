@@ -1,6 +1,6 @@
 {% set name = "brightway2" %}
-{% set version = "2.1" %}
-{% set sha256 = "2c2b3ba236bce5c17a7cf8239455c865721b31b6f0fc521792177bb5a789d628" %}
+{% set version = "2.1.1" %}
+{% set sha256 = "9ef3b2f53dea9f18b4997465353b62b224e87b12add793e6ce5f2dba97b2ac49" %}
 
 package:
   name: {{ name|lower }}
@@ -13,7 +13,7 @@ source:
 
 build:
   noarch: python
-  number: 5
+  number: 0
   script: python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:

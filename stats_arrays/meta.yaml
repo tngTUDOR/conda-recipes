@@ -1,6 +1,6 @@
 {% set name = "stats_arrays" %}
-{% set version = "0.4.1" %}
-{% set sha256 = "6cfa17e7e87a1820bedea47fa0ded46c5d762d2d6ebfc157a7b6a46cdcfc85df" %}
+{% set version = "0.4.2" %}
+{% set sha256 = "8c11f7bde0698b04d57633c4dd1a79d835213615df7557f4faf580e6ae63e107" %}
 
 package:
   name: {{ name|lower }}
@@ -13,7 +13,7 @@ source:
 
 build:
   noarch_python: True
-  number: 3
+  number: 0
   script: python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:

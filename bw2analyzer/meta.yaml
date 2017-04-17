@@ -1,6 +1,6 @@
 {% set name = "bw2analyzer" %}
-{% set version = "0.9.3" %}
-{% set sha256 = "e328542874776f76966b89b3772ebecc704078a1ecf88c5f73d1b2e1dcfe0f25" %}
+{% set version = "0.9.4" %}
+{% set sha256 = "10500d47b85cd6c4ffe47ca983fd48ca6e87b04aca1fea39c5114334ea4b820a" %}
 
 package:
   name: {{ name|lower }}
@@ -13,7 +13,7 @@ source:
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
@@ -48,6 +48,7 @@ test:
 
 about:
   home: https://bitbucket.org/cmutel/brightway2-analyzer
-  license: BSD License
-  summary: 'UNKNOWN'
+  license: BSD 3-Clause
+  license_file: LICENSE.txt
+  summary: 'Interpretation and other tools for Brightway2 LCA framework'
   license_family: BSD

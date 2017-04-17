@@ -1,6 +1,6 @@
 {% set name = "bw2io" %}
-{% set version = "0.5.8.1" %}
-{% set sha256 = "232b4c5b0ca342ab86060d941ecfbbd8949c2c97fb1b0c7bd9a880f7cde6fea6" %}
+{% set version = "0.5.9.1" %}
+{% set sha256 = "1cfdaeb02b5617a05051e0bc372774a76d3a265462a5d8186c5e6c4308403626" %}
 
 package:
   name: {{ name|lower }}
@@ -13,7 +13,7 @@ source:
 
 build:
   noarch: python
-  number: 2
+  number: 0
   script: python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
@@ -59,7 +59,7 @@ test:
 
 about:
   home: https://brightwaylca.org/
-  license: BSD 2-Clause
+  license: BSD 3-Clause
   license_file: LICENSE.txt
   summary: 'Tools for importing and export life cycle inventory databases'
   license_family: BSD
