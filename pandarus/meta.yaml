@@ -1,6 +1,6 @@
-{% set name = "bw2io" %}
+{% set name = "pandarus" %}
 {% set version = "1.0.2" %}
-{% set sha256 = "1cfdaeb02b5617a05051e0bc372774a76d3a265462a5d8186c5e6c4308403626" %}
+{% set sha256 = "4dfb6129523477c6421f98dd066495ad6eb9914ad6073eeb661f1ba25d58a917" %}
 
 package:
   name: {{ name|lower }}
