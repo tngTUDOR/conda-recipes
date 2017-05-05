@@ -1,30 +1,20 @@
+{% set name = "pandarus" %}
+{% set version = "1.0.4" %}
+{% set sha256 = "f254803461cbbccf5af597729e4a55b97e08021df2d53d607c1cc249b7f2f67b" %}
+
 package:
-  name: pandarus
-  version: "1.0.1"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  fn: pandarus-1.0.1.tar.gz
-  url: https://pypi.python.org/packages/40/ec/91b987c09c1f036fb408784ad6dd574bbf67482a1d0cc2cf2062958d05b4/pandarus-1.0.1.tar.gz
-  md5: 3dbabc4acbfa26a0673ecaa997d307e5
-#  patches:
-   # List any patch files here
-   # - fix.patch
+  fn: {{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: {{ sha256 }}
 
 build:
-  noarch_python: True
-  # preserve_egg_dir: True
-  # entry_points:
-    # Put any entry points (scripts to be generated automatically) here. The
-    # syntax is module:function.  For example
-    #
-    # - pandarus = pandarus:main
-    #
-    # Would create an entry point called pandarus that calls pandarus.main()
-
-
-  # If this is a new build for the same version, increment the build
-  # number. If you do not include this key, it defaults to 0.
-  # number: 1
+  noarch: python
+  number: 0
+  script: python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
   build:
@@ -53,28 +43,13 @@ requirements:
     - certifi
 
 test:
-  # Python imports
   imports:
-    - pandarus
-
-  # commands:
-    # You can put test commands to be run here.  Use this to test that the
-    # entry points work.
-
-
-  # You can also put a file called run_test.py in the recipe that will be run
-  # at test time.
-
-  # requires:
-    # Put any additional test requirements here.  For example
-    # - nose
+    - {{ name }}
 
 about:
   home: https://github.com/cmutel/pandarus
   license: BSD License
-  summary: ''
+  license_file: LICENSE
+  summary: 'GIS software toolkit for regionalized life cycle assessment'
   license_family: BSD
-
-# See
-# http://docs.continuum.io/conda/build.html for
-# more information about meta.yaml
+  doc_url: https://pandarus.readthedocs.io/
