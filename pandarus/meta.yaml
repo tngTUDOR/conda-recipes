@@ -48,8 +48,8 @@ test:
 
 about:
   home: https://github.com/cmutel/pandarus
-  license: BSD License
+  license: BSD 3-Clause
   license_file: LICENSE
-  summary: 'GIS software toolkit for regionalized life cycle assessment'
+  summary: 'GIS toolkit for regionalized life cycle assessment'
   license_family: BSD
-  doc_url: https://pandarus.readthedocs.io/
+  doc_url: http://pandarus.readthedocs.io/
