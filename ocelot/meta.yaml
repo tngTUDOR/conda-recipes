@@ -1,0 +1,74 @@
+{% set name = "bw2data" %}
+{% set version = "2.4.4" %}
+{% set sha256 = "4fd504c2997efa4b4646c7570983d50a8944b61b0d4e085a25ce6c15ab094d24" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  fn: {{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: {{ sha256 }}
+
+build:
+  noarch: python
+  number: 0
+  script: python setup.py install --single-version-externally-managed --record record.txt
+
+requirements:
+  build:
+    - appdirs
+    - bw2parameters
+    - docopt
+    - eight
+    - fasteners
+    - future
+    - lxml
+    - numpy
+    - peewee
+    - psutil
+    - pyprind
+    - python
+    - requests
+    - scipy
+    - setuptools
+    - stats_arrays
+    - unicodecsv
+    - voluptuous
+    - whoosh
+    - wrapt
+
+  run:
+    - appdirs
+    - bw2parameters
+    - docopt
+    - eight
+    - fasteners
+    - future
+    - lxml
+    - numpy
+    - peewee
+    - psutil
+    - pyprind
+    - python
+    - requests
+    - scipy
+    - stats_arrays
+    - unicodecsv
+    - voluptuous
+    - whoosh
+    - wrapt
+
+test:
+  imports:
+    - {{ name }}
+
+about:
+  home: https://brightwaylca.org/
+  license: BSD 3-Clause
+  license_file: LICENSE.txt
+  summary: 'Data management for the Brightway2 life cycle assessment framework'
+  license_family: BSD
+  doc_url: https://docs.brightwaylca.org/
+  dev_url: https://bitbucket.org/cmutel/brightway2-data/
