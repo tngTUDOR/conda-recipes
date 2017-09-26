@@ -1,17 +1,20 @@
+{% set name = "constructive_geometries" %}
+{% set version = "0.5" %}
+{% set sha256 = "c7a99f96717ef2f56b3ce79c591e1983fd9c1ff5fd322e7ce8d25e2674d8f14e" %}
+
 package:
-  name: constructive_geometries
-  version: "0.4.1"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  fn: constructive_geometries-0.4.1.tar.gz
-  url: https://pypi.python.org/packages/dc/a6/3889a83120575684c172574d305a09f39e7d59c22a842407227198d3606a/constructive_geometries-0.4.1.tar.gz#md5=6a3b4bbfcad1996f99a9b9575688f292
-  md5: 6a3b4bbfcad1996f99a9b9575688f292
+  fn: {{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: {{ sha256 }}
 
 build:
-  noarch_python: True
-  # If this is a new build for the same version, increment the build
-  # number. If you do not include this key, it defaults to 0.
-  # number: 1
+  noarch: python
+  number: 0
+  script: python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
   build:
@@ -19,11 +22,13 @@ requirements:
     - fiona
     - setuptools
     - shapely
+    - wrapt
 
   run:
     - python
     - fiona
     - shapely
+    - wrapt
 
 test:
   # Python imports
@@ -33,5 +38,5 @@ test:
 about:
   home: https://bitbucket.org/cmutel/py-constructive-geometries
   license: BSD License
-  summary: ''
+  summary: 'Tool to build new geometrical definitions from the ecoinvent topology'
   license_family: BSD
