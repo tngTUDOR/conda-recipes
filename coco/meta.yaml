@@ -1,0 +1,38 @@
+{% set name = "country_converter" %}
+{% set version = "0.5.4" %}
+{% set sha256 = "200bc6081b7b2ce65d28f9d6ee2dab76329a48a7bc79a48964ae12231aee6ebe" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  fn: {{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: {{ sha256 }}
+
+build:
+  noarch: python
+  number: 0
+  script: python setup.py install --single-version-externally-managed --record record.txt
+
+requirements:
+  build:
+    - pandas
+    - python
+    - setuptools
+
+  run:
+    - pandas
+    - python
+
+test:
+  imports:
+    - {{ name }}
+
+about:
+  home: https://github.com/konstantinstadler/country_converter
+  license: GPL 3.0
+  license_file: LICENSE
+  summary: 'The country converter (coco) - a Python package for converting country names between different classification schemes.'
+  license_family: GPL
