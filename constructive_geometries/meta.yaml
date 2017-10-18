@@ -1,37 +1,44 @@
+{% set name = "constructive_geometries" %}
+{% set version = "0.6.1" %}
+{% set sha256 = "76c33bbc2494ba1e473dcb533b6b711ff3273abb18fc4d7bdb66684ca2a9319b" %}
+
 package:
-  name: constructive_geometries
-  version: "0.4.1"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  fn: constructive_geometries-0.4.1.tar.gz
-  url: https://pypi.python.org/packages/dc/a6/3889a83120575684c172574d305a09f39e7d59c22a842407227198d3606a/constructive_geometries-0.4.1.tar.gz#md5=6a3b4bbfcad1996f99a9b9575688f292
-  md5: 6a3b4bbfcad1996f99a9b9575688f292
+  fn: {{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: {{ sha256 }}
 
 build:
-  noarch_python: True
-  # If this is a new build for the same version, increment the build
-  # number. If you do not include this key, it defaults to 0.
-  # number: 1
+  noarch: python
+  number: 0
+  script: python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
   build:
-    - python
+    - country_converter
     - fiona
+    - python
     - setuptools
     - shapely
+    - wrapt
 
   run:
-    - python
+    - country_converter
     - fiona
+    - python
     - shapely
+    - wrapt
 
 test:
-  # Python imports
   imports:
-    - constructive_geometries
+    - {{ name }}
 
 about:
-  home: https://bitbucket.org/cmutel/py-constructive-geometries
-  license: BSD License
-  summary: ''
+  home: https://github.com/cmutel/constructive_geometries
+  license: BSD 3-Clause
+  license_file: LICENSE
+  summary: 'Simple tools to define world locations from a set of topological faces and set algebra'
   license_family: BSD
