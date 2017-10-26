@@ -1,0 +1,63 @@
+{% set name = "wurst" %}
+{% set version = "0.1" %}
+{% set sha256 = "bbaa330c969d886a98884ded3d3ae9a1630d86d7d6eb23f28e9b521b9da94448" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  fn: {{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: {{ sha256 }}
+
+build:
+  noarch: python
+  number: 0
+  script: python setup.py install --single-version-externally-managed --record record.txt
+
+requirements:
+  build:
+    - python
+    - setuptools
+    - appdirs
+    - constructive_geometries
+    - country_converter
+    - docopt
+    - fiona
+    - numpy
+    - pandas
+    - python-json-logger
+    - shapely
+    - tqdm
+    - wrapt
+
+
+  run:
+    - python
+    - appdirs
+    - constructive_geometries
+    - country_converter
+    - docopt
+    - fiona
+    - numpy
+    - pandas
+    - python-json-logger
+    - shapely
+    - tqdm
+    - wrapt
+
+test:
+  imports:
+    - {{ name }}
+
+about:
+  home: https://github.com/IndEcol/wurst
+  license: BSD 3-Clause
+  license_file: LICENSE
+  summary: 'Code and metadata for linking life cycle assessment databases to other models'
+  license_family: BSD
+  doc_url: https://wurst.readthedocs.io/
+  dev_url: https://github.com/IndEcol/wurst
+
+
