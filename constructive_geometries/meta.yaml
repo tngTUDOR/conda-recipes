@@ -37,14 +37,8 @@ test:
     - {{ name }}
 
 about:
-<<<<<<< HEAD
   home: https://github.com/cmutel/constructive_geometries
   license: BSD 3-Clause
   license_file: LICENSE
   summary: 'Simple tools to define world locations from a set of topological faces and set algebra'
-=======
-  home: https://bitbucket.org/cmutel/py-constructive-geometries
-  license: BSD License
-  summary: 'Tool to build new geometrical definitions from the ecoinvent topology'
->>>>>>> origin/master
   license_family: BSD
