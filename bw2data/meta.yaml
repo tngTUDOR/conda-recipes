@@ -1,6 +1,6 @@
 {% set name = "bw2data" %}
-{% set version = "2.4.7" %}
-{% set sha256 = "79679344c85bee5d7b05de87723bab50260e7f757cbdefa01f722e0346cf42bb" %}
+{% set version = "3.0.rc1" %}
+{% set sha256 = "990ac111382bca2bf99038615d94ad025263903d5580a1642e7eeee614c91fdd" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,8 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  # url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://files.pythonhosted.org/packages/b8/07/2e5e05ccc1935702a4a0a8cc8d2ffc1706384eb0d1cde4f924c18e9eaa43/bw2data-3.0rc1.tar.gz
   sha256: {{ sha256 }}
 
 build:
