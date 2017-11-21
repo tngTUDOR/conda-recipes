@@ -1,6 +1,6 @@
 {% set name = "bw2io" %}
-{% set version = "0.6.RC2" %}
-{% set sha256 = "a6c75d0c34338a762d44d595f5d08a91b5b6fd0bf04fc57944368a3d2b1c8ff6" %}
+{% set version = "0.6.RC3" %}
+{% set sha256 = "63a6c46912a65110485642983ad688fdc7b1c51d43d4b907e7bd6c03a11ec7e1" %}
 
 package:
   name: {{ name|lower }}
@@ -9,7 +9,7 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   # url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  url: https://files.pythonhosted.org/packages/10/66/d91fe54b104084d32abf709b45ef57f1af0d7d32e71108a8bbdeb3414201/bw2io-0.6rc2.tar.gz
+  url: https://files.pythonhosted.org/packages/11/c2/ad2b8c1e75b129d12e00e4d8833d8e7ada6ea67392d964e83e05d1d19f19/bw2io-0.6rc3.tar.gz
   sha256: {{ sha256 }}
 
 build:
