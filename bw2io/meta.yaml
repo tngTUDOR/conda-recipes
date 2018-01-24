@@ -14,13 +14,13 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
   build:
     - bw2calc
-    - bw2data 3.0.rc1
+    - bw2data
     - lxml
     - numpy
     - psutil
@@ -36,7 +36,7 @@ requirements:
 
   run:
     - bw2calc
-    - bw2data 3.0.rc1
+    - bw2data
     - lxml
     - numpy
     - psutil
