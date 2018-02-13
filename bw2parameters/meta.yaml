@@ -1,6 +1,6 @@
 {% set name = "bw2parameters" %}
-{% set version = "0.6.1.2" %}
-{% set sha256 = "6a7f073ea82c13f682f2857ee2b4df0e72bd68829c4c2d973bcbac0f5ed88634" %}
+{% set version = "0.6.2" %}
+{% set sha256 = "8d010b7c13a0b02346612d1927dd8446eb6eebeacfece62a2a232fe49575323a" %}
 
 package:
   name: {{ name|lower }}
@@ -13,7 +13,7 @@ source:
 
 build:
   noarch: python
-  number: 3
+  number: 0
   script: python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
