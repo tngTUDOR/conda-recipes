@@ -1,6 +1,6 @@
 {% set name = "bw2parameters" %}
-{% set version = "0.6.2.1" %}
-{% set sha256 = "60ccd6344fc9892edad35cd7fc93c8e3b44a5138033e94bae761493f4dc708f5" %}
+{% set version = "0.6.4" %}
+{% set sha256 = "89b6da824f56043d198b84a14b9e16ee10e6ff672987229f3d4914f702cb6baa" %}
 
 package:
   name: {{ name|lower }}
