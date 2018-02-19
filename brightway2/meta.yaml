@@ -1,6 +1,6 @@
 {% set name = "brightway2" %}
-{% set version = "2.1.1" %}
-{% set sha256 = "9ef3b2f53dea9f18b4997465353b62b224e87b12add793e6ce5f2dba97b2ac49" %}
+{% set version = "2.1.2" %}
+{% set sha256 = "56eefcc012bb890dce10c03ca82f02620559b103f65a286aa67d78846006318b" %}
 
 package:
   name: {{ name|lower }}
@@ -13,7 +13,7 @@ source:
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
@@ -31,7 +31,7 @@ requirements:
     - future
     - lxml
     - numpy
-    - peewee >=2.8
+    - peewee <3.0
     - psutil
     - pypardiso
     - pyprind
@@ -60,7 +60,7 @@ requirements:
     - future
     - lxml
     - numpy
-    - peewee >=2.8
+    - peewee <3.0
     - psutil
     - pypardiso
     - pyprind
