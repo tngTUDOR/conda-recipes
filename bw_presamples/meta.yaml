@@ -1,0 +1,50 @@
+{% set name = "bw_presamples" %}
+{% set version = "0.0.dev0" %}
+{% set sha256 = "07a93de019eafd17042d417bed5c3a518790a1458a1e0c82a1c6b3fda35eadf8" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  fn: {{ name }}-{{ version }}.tar.gz
+  url: https://files.pythonhosted.org/packages/81/83/e18322d5cb373c0d5fa88e0cbb6a725bc8500acba3ca28d6db307f55d8ae/bw-presamples-0.0.dev0.tar.gz
+  sha256: {{ sha256 }}
+
+build:
+  noarch: python
+  number: 0
+  script: python setup.py install --single-version-externally-managed --record record.txt
+
+requirements:
+  build:
+    - bw2calc
+    - bw2data
+    - numpy
+    - peewee <3.0
+    - scipy
+    - stats_arrays
+    - wrapt
+    - python
+    - setuptools
+
+  run:
+    - bw2calc
+    - bw2data
+    - numpy
+    - peewee <3.0
+    - scipy
+    - stats_arrays
+    - wrapt
+
+test:
+  imports:
+    - {{ name }}
+
+about:
+  home: https://github.com/PascalLesage/brightway2-presamples
+  license: BSD 3-Clause
+  license_file: LICENSE
+  summary: 'This is a package for the creation and use of presampled values in Monte Carlo for Brightway LCA framework.'
+  license_family: BSD
+  dev_url: https://github.com/PascalLesage/brightway2-presamples
