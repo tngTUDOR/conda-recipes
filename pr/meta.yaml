@@ -13,7 +13,7 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
@@ -25,7 +25,7 @@ requirements:
     - flask
     - numpy
     - pandarus
-    - peewee
+    - peewee <3
     - pyproj
     - python
     - rasterio
@@ -45,7 +45,7 @@ requirements:
     - flask
     - numpy
     - pandarus
-    - peewee
+    - peewee <3
     - pyproj
     - python
     - rasterio
@@ -63,6 +63,6 @@ test:
 about:
   home: https://github.com/cmutel/pandarus_remote
   license: BSD 3-Clause
-  license_file: LICENSE
+  license_file: LICENSE.txt
   summary: 'Pandarus_remote is a web service for processing and managing data for regionalized life cycle assessment using pandarus'
   license_family: BSD
