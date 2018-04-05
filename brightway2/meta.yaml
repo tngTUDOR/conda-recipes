@@ -1,6 +1,6 @@
 {% set name = "brightway2" %}
-{% set version = "2.1.2" %}
-{% set sha256 = "56eefcc012bb890dce10c03ca82f02620559b103f65a286aa67d78846006318b" %}
+{% set version = "2.2" %}
+{% set sha256 = "b2b3e24cea7fb3103ecdf1e9245fdaef2590041deabe837e8e9321a34a689f12" %}
 
 package:
   name: {{ name|lower }}
