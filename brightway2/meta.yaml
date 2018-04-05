@@ -31,7 +31,7 @@ requirements:
     - future
     - lxml
     - numpy
-    - peewee <3.0
+    - peewee >3.0
     - psutil
     - pypardiso
     - pyprind
@@ -60,7 +60,7 @@ requirements:
     - future
     - lxml
     - numpy
-    - peewee <3.0
+    - peewee >3.0
     - psutil
     - pypardiso
     - pyprind
