@@ -1,6 +1,6 @@
-{% set name = "bw_presamples" %}
-{% set version = "0.0.dev0" %}
-{% set sha256 = "07a93de019eafd17042d417bed5c3a518790a1458a1e0c82a1c6b3fda35eadf8" %}
+{% set name = "presamples" %}
+{% set version = "0.2" %}
+{% set sha256 = "5818bf89ebe36c396f93b979ae25bf0e99a9fd992f4eb609e4581c9dc7bae25c" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.tar.gz
-  url: https://files.pythonhosted.org/packages/81/83/e18322d5cb373c0d5fa88e0cbb6a725bc8500acba3ca28d6db307f55d8ae/bw-presamples-0.0.dev0.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
@@ -18,10 +18,11 @@ build:
 
 requirements:
   build:
-    - bw2calc
-    - bw2data
+    - bw2calc >=1.7.1
+    - bw2data >=3.3
+    - bw2parameters >=0.6.4
     - numpy
-    - peewee <3.0
+    - peewee >3.0
     - scipy
     - stats_arrays
     - wrapt
@@ -29,10 +30,11 @@ requirements:
     - setuptools
 
   run:
-    - bw2calc
-    - bw2data
+    - bw2calc >=1.7.1
+    - bw2data >=3.3
+    - bw2parameters >=0.6.4
     - numpy
-    - peewee <3.0
+    - peewee >3.0
     - scipy
     - stats_arrays
     - wrapt
