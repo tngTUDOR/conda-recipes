@@ -1,6 +1,6 @@
 {% set name = "bw2io" %}
-{% set version = "0.6.RC3" %}
-{% set sha256 = "63a6c46912a65110485642983ad688fdc7b1c51d43d4b907e7bd6c03a11ec7e1" %}
+{% set version = "0.6.RC4" %}
+{% set sha256 = "18f3d28f48f3d9604bc875384da8fb63f97202d8decf23768ce8806588744e9c" %}
 
 package:
   name: {{ name|lower }}
@@ -9,7 +9,7 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   # url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  url: https://files.pythonhosted.org/packages/11/c2/ad2b8c1e75b129d12e00e4d8833d8e7ada6ea67392d964e83e05d1d19f19/bw2io-0.6rc3.tar.gz
+  url: https://files.pythonhosted.org/packages/32/91/883c541d15dc70c32035a87daac20c2badbc73c4313ea4d2cc04b4aec5be/bw2io-0.6rc4.tar.gz
   sha256: {{ sha256 }}
 
 build:
@@ -19,8 +19,8 @@ build:
 
 requirements:
   build:
-    - bw2calc
-    - bw2data
+    - bw2calc >=1.7.1
+    - bw2data >=3.3
     - lxml
     - numpy
     - psutil
@@ -28,22 +28,22 @@ requirements:
     - python
     - scipy
     - setuptools
-    - stats_arrays
+    - stats_arrays >=0.4.2
     - unidecode
     - voluptuous
     - xlrd
     - xlsxwriter
 
   run:
-    - bw2calc
-    - bw2data
+    - bw2calc >=1.7.1
+    - bw2data >=3.3
     - lxml
     - numpy
     - psutil
     - pyprind
     - python
     - scipy
-    - stats_arrays
+    - stats_arrays >=0.4.2
     - unidecode
     - voluptuous
     - xlrd
