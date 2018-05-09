@@ -9,7 +9,7 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   # url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  url: https://files.pythonhosted.org/packages/11/c2/ad2b8c1e75b129d12e00e4d8833d8e7ada6ea67392d964e83e05d1d19f19/bw2io-0.6rc3.tar.gz
+  url: https://files.pythonhosted.org/packages/e9/dd/637778b45e0a374b12279003e997474fb9371b4ee9f92a0ff2679b8fb3ea/bw2io-0.6rc5.tar.gz
   sha256: {{ sha256 }}
 
 build:
