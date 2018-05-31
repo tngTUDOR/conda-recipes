@@ -1,6 +1,6 @@
 {% set name = "bw2io" %}
-{% set version = "0.6.RC4" %}
-{% set sha256 = "18f3d28f48f3d9604bc875384da8fb63f97202d8decf23768ce8806588744e9c" %}
+{% set version = "0.6.RC5" %}
+{% set sha256 = "c5c69dea6c07a23d951dddd4553c2cbcc94977b2c47133ae8b1e245c337f945f" %}
 
 package:
   name: {{ name|lower }}
@@ -9,12 +9,12 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   # url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  url: https://files.pythonhosted.org/packages/32/91/883c541d15dc70c32035a87daac20c2badbc73c4313ea4d2cc04b4aec5be/bw2io-0.6rc4.tar.gz
+  url: https://files.pythonhosted.org/packages/e9/dd/637778b45e0a374b12279003e997474fb9371b4ee9f92a0ff2679b8fb3ea/bw2io-0.6rc5.tar.gz
   sha256: {{ sha256 }}
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:

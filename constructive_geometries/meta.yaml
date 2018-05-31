@@ -1,6 +1,6 @@
 {% set name = "constructive_geometries" %}
-{% set version = "0.6.1" %}
-{% set sha256 = "76c33bbc2494ba1e473dcb533b6b711ff3273abb18fc4d7bdb66684ca2a9319b" %}
+{% set version = "0.6.4" %}
+{% set sha256 = "4043ad6edb3ac5f0cd126d058f599f9ffbde24e34d360101d4bad97b46e20f05" %}
 
 package:
   name: {{ name|lower }}
