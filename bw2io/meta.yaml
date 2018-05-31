@@ -1,6 +1,6 @@
 {% set name = "bw2io" %}
-{% set version = "0.6.RC5" %}
-{% set sha256 = "c5c69dea6c07a23d951dddd4553c2cbcc94977b2c47133ae8b1e245c337f945f" %}
+{% set version = "0.6" %}
+{% set sha256 = "f6884e68ca9e157fe18ec69c95f645244714a4fa5013554305c9add7dc7c182c" %}
 
 package:
   name: {{ name|lower }}
@@ -8,8 +8,7 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.tar.gz
-  # url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  url: https://files.pythonhosted.org/packages/e9/dd/637778b45e0a374b12279003e997474fb9371b4ee9f92a0ff2679b8fb3ea/bw2io-0.6rc5.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
@@ -20,7 +19,7 @@ build:
 requirements:
   build:
     - bw2calc >=1.7.1
-    - bw2data >=3.3
+    - bw2data >=3.4
     - lxml
     - numpy
     - psutil
@@ -36,7 +35,7 @@ requirements:
 
   run:
     - bw2calc >=1.7.1
-    - bw2data >=3.3
+    - bw2data >=3.4
     - lxml
     - numpy
     - psutil
