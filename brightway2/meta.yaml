@@ -1,6 +1,6 @@
 {% set name = "brightway2" %}
-{% set version = "2.2" %}
-{% set sha256 = "b2b3e24cea7fb3103ecdf1e9245fdaef2590041deabe837e8e9321a34a689f12" %}
+{% set version = "2.3" %}
+{% set sha256 = "d4a6662bc7e6a41dcee6f8a478a070ba35269c0bd2bcbe59938acf239094e5c6" %}
 
 package:
   name: {{ name|lower }}
@@ -21,10 +21,10 @@ requirements:
     - appdirs
     - asteval
     - bw2analyzer
-    - bw2calc
-    - bw2data
-    - bw2io >=0.5.10
-    - bw2parameters
+    - bw2calc >=1.7.1
+    - bw2data >=3.4.1
+    - bw2io >=0.6
+    - bw2parameters >=0.6.5
     - docopt
     - eight
     - flask
@@ -50,10 +50,10 @@ requirements:
     - appdirs
     - asteval
     - bw2analyzer
-    - bw2calc
-    - bw2data
-    - bw2io >=0.5.10
-    - bw2parameters
+    - bw2calc >=1.7.1
+    - bw2data >=3.4.1
+    - bw2io >=0.6
+    - bw2parameters >=0.6.5
     - docopt
     - eight
     - flask
