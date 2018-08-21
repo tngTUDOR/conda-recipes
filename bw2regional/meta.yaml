@@ -1,59 +1,65 @@
+{% set name = "bw2regional" %}
+{% set version = "0.5.1" %}
+{% set sha256 = "9a75f967cb4cb29d234153aff818adb3e023faffdc87cb1ea85235d855005325" %}
+
 package:
-  name: bw2regional
-  version: "0.4.2"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  fn: bw2regional-0.4.2.tar.gz
-  url: https://pypi.python.org/packages/36/26/27fabceb44175c4427ea756efee9aff9e8d8b214721bd039c9bad3e2dcbf/bw2regional-0.4.2.tar.gz
-  md5: 6e26c018c88fefa5c6393a70d5f6e913
+  fn: {{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: {{ sha256 }}
 
 build:
-  noarch_python: True
-
-  # If this is a new build for the same version, increment the build
-  # number. If you do not include this key, it defaults to 0.
-  # number: 1
+  # Build command: conda build -c konstantinstadler -c cmutel -c conda-forge bw2regional
+  noarch: python
+  number: 0
+  script: python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
   build:
-    - python
-    - setuptools
-    - brightway2
-    - bw2calc >=1.2
-    - bw2data >=2.0
+    - appdirs
+    - bw2calc >=1.7.1
+    - bw2data >=3.4.2
     - constructive_geometries
     - eight
     - fiona
+    - pandarus >=1.0.4
     - pandas
-    - pandarus >=1.0
+    - pyprind
+    - python
     - requests
+    - rower
+    - setuptools
     - stats_arrays
     - voluptuous
     - wrapt
 
   run:
-    - python
-    - brightway2
-    - bw2calc >=1.2
-    - bw2data >=2.0
+    - appdirs
+    - bw2calc >=1.7.1
+    - bw2data >=3.4.2
     - constructive_geometries
     - eight
     - fiona
+    - pandarus >=1.0.4
     - pandas
-    - pandarus >=1.0
+    - pyprind
+    - python
     - requests
+    - rower
     - stats_arrays
     - voluptuous
     - wrapt
 
 test:
-  # Python imports
-  # imports:
-  #   - bw2regional
-  #   - bw2regional.lca
+  imports:
+    - {{ name }}
 
 about:
   home: https://bitbucket.org/cmutel/brightway2-regional
   license: BSD License
-  summary: ''
   license_family: BSD
+  license_file: LICENSE.txt
+  summary: 'LCA calculations for the Brightway2 life cycle assessment framework'
