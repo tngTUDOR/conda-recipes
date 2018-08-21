@@ -1,6 +1,6 @@
 {% set name = "wurst" %}
-{% set version = "0.1.1" %}
-{% set sha256 = "6906d9086b39161b35803e495d8bc1b9b929ded90ef0a1376ebd71e5be4732f2" %}
+{% set version = "0.1.2" %}
+{% set sha256 = "7383f4a2d98834365f1765da1253543ed32da84d241bedd73bc134817b049e85" %}
 
 package:
   name: {{ name|lower }}
@@ -12,6 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
+  # build command: conda build -c konstantinstadler -c cmutel -c conda-forge wurst
   noarch: python
   number: 0
   script: python setup.py install --single-version-externally-managed --record record.txt
