@@ -1,36 +1,67 @@
+{% set name = "bw2_lcimpact" %}
+{% set version = "0.2.1" %}
+{% set sha256 = "fb1c5f88ee3a1ce11dc6d073cb968da30c1e4f88b5e231042931415c41341983" %}
+
 package:
-  name: bw2-lcimpact
-  version: "0.1.1"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  fn: bw2-lcimpact-0.1.1.tar.gz
-  url: https://pypi.python.org/packages/19/fc/c568695f7348a72f4d75f453cc7ce93d271d6c27c8ba3ae316136ecc89bb/bw2-lcimpact-0.1.1.tar.gz
-  md5: 343b16aae33f3dde109dbbb1397cf9a5
+  fn: {{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: {{ sha256 }}
 
 build:
+  # Build command: conda build -c conda-forge -c cmutel -c konstantinstadler bw2_lcimpact
   noarch_python: True
-
-  # If this is a new build for the same version, increment the build
-  # number. If you do not include this key, it defaults to 0.
-  # number: 1
+  number: 0
+  script: python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
   build:
     - python
+    - setuptools
     - brightway2
+    - bw2calc >=1.2
+    - bw2data >=2.0
+    - bw2regional >=0.5.1
+    - constructive_geometries
+    - eight
+    - fiona
+    - pandas
+    - pandarus >=1.0
+    - python
+    - requests
+    - rower
+    - setuptools
+    - stats_arrays
+    - voluptuous
     - wrapt
 
   run:
     - python
     - brightway2
+    - bw2calc >=1.2
+    - bw2data >=2.0
+    - bw2regional >=0.5.1
+    - constructive_geometries
+    - eight
+    - fiona
+    - pandas
+    - pandarus >=1.0
+    - python
+    - requests
+    - rower
+    - stats_arrays
+    - voluptuous
     - wrapt
 
 test:
   imports:
-    - bw2_lcimpact
+    - {{ name }}
 
 about:
-  home: https://bitbucket.org/cmutel/brightway2-regional
+  home: https://github.com/cmutel/bw2-lcimpact
   license: BSD License
-  summary: ''
+  summary: 'This package provides the impact of the LC IMPACT regionalized LCIA method in brightway2 and brightway2-regional'
   license_family: BSD
