@@ -1,0 +1,67 @@
+{% set name = "bw2_aware" %}
+{% set version = "0.1" %}
+{% set sha256 = "4d2a294f2be32ae0efdf1966157dd236cc0d3fd26412960ad7670fe43f9a4fe6" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  fn: {{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: {{ sha256 }}
+
+build:
+  # Build command: conda build -c conda-forge -c cmutel -c konstantinstadler bw2_lcimpact
+  noarch_python: True
+  number: 0
+  script: python setup.py install --single-version-externally-managed --record record.txt
+
+requirements:
+  build:
+    - python
+    - setuptools
+    - brightway2
+    - bw2calc >=1.2
+    - bw2data >=2.0
+    - bw2regional >=0.5.1
+    - constructive_geometries
+    - eight
+    - fiona
+    - pandas
+    - pandarus >=1.0
+    - python
+    - requests
+    - rower
+    - setuptools
+    - stats_arrays
+    - voluptuous
+    - wrapt
+
+  run:
+    - python
+    - brightway2
+    - bw2calc >=1.2
+    - bw2data >=2.0
+    - bw2regional >=0.5.1
+    - constructive_geometries
+    - eight
+    - fiona
+    - pandas
+    - pandarus >=1.0
+    - python
+    - requests
+    - rower
+    - stats_arrays
+    - voluptuous
+    - wrapt
+
+test:
+  imports:
+    - {{ name }}
+
+about:
+  home: https://github.com/cmutel/bw2_aware
+  license: BSD License
+  summary: 'Brightway2-regional implementation of the AWARE LCIA method'
+  license_family: BSD
