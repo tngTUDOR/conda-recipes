@@ -1,6 +1,6 @@
 {% set name = "rower" %}
-{% set version = "0.1" %}
-{% set sha256 = "da346307f42e1fab3e114d38fd0c530ba4166b0febf8e73a49f4a79645ade65f" %}
+{% set version = "0.2" %}
+{% set sha256 = "5f3756eb5e5e4e2098f01722eacde0961f18f8a364d44040585f5d31af56955e" %}
 
 package:
   name: {{ name|lower }}
