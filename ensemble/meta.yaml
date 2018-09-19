@@ -1,0 +1,35 @@
+{% set name = "ensemble" %}
+{% set version = "0.0.dev1" %}
+{% set sha256 = "f863fe42c5045a8fb9e96027bacdadcc71473ecbbb6368b295fa7daf85ecec05" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: {{ sha256 }}
+
+build:
+  # Build command: conda build -c conda-forge -c cmutel ensemble
+  noarch_python: True
+  number: 0
+  script: python setup.py install --single-version-externally-managed --record record.txt
+
+requirements:
+  build:
+    - python
+    - setuptools
+
+  run:
+    - python
+
+test:
+  imports:
+    - {{ name }}
+
+about:
+  home: https://github.com/OASES-project/ensemble
+  license: BSD License
+  summary: 'Library to create hybrid LCI databases, using science'
+  license_family: BSD
