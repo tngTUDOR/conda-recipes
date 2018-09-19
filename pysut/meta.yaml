@@ -1,0 +1,46 @@
+{% set name = "pysut" %}
+{% set version = "1.1" %}
+{% set sha256 = "165c1594dd5de226503b93bbfca198dbcd81cebdf5ac27642a257fd29886e974" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  fn: {{ name }}-{{ version }}.zip
+  # url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://files.pythonhosted.org/packages/28/96/846a949e7c3d3bdf2fb166e5506a1fb321c3d8513fbd958a4ca2ee02d772/pysut-1.1.zip
+  sha256: {{ sha256 }}
+
+build:
+  # build command: conda build -c conda-forge pysut
+  noarch_python: True
+  number: 0
+  script: python setup.py install --single-version-externally-managed --record record.txt
+
+requirements:
+  build:
+    - numpy
+    - python
+    - scipy
+    - setuptools
+    - wheel
+
+  run:
+    - numpy
+    - python
+    - scipy
+    - setuptools
+    - wheel
+
+test:
+  imports:
+    - {{ name }}
+
+about:
+  home: https://github.com/stefanpauliuk/pySUT
+  license: BSD 3-Clause
+  license_file: LICENSE.txt
+  summary: 'Python class for efficient handling of supply and use tables (SUTs)'
+  license_family: BSD
+  doc_url: http://htmlpreview.github.com/?https://github.com/stefanpauliuk/pySUT/blob/master/Doc/pysut.html
