@@ -1,6 +1,6 @@
 {% set name = "bw2_aware" %}
-{% set version = "0.1" %}
-{% set sha256 = "4d2a294f2be32ae0efdf1966157dd236cc0d3fd26412960ad7670fe43f9a4fe6" %}
+{% set version = "0.2" %}
+{% set sha256 = "0044a3d1cd131b4ae2b7dc6d882337f9388eda2d5674c922f87d3b55c8051d44" %}
 
 package:
   name: {{ name|lower }}
