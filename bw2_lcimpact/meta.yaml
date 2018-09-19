@@ -1,13 +1,12 @@
 {% set name = "bw2_lcimpact" %}
-{% set version = "0.2.1" %}
-{% set sha256 = "fb1c5f88ee3a1ce11dc6d073cb968da30c1e4f88b5e231042931415c41341983" %}
+{% set version = "0.2.2" %}
+{% set sha256 = "432ce328ba43efec98b942176316807afab0038a2f17a011ab99121d42714429" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
