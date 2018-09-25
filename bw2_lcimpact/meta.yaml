@@ -1,6 +1,6 @@
 {% set name = "bw2_lcimpact" %}
-{% set version = "0.2.2" %}
-{% set sha256 = "432ce328ba43efec98b942176316807afab0038a2f17a011ab99121d42714429" %}
+{% set version = "0.3" %}
+{% set sha256 = "41128faf57eb577f93a89e386f510309c8a0b0f5e2cb09201473aff244c0fca5" %}
 
 package:
   name: {{ name|lower }}
