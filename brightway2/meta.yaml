@@ -13,7 +13,7 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
@@ -21,9 +21,9 @@ requirements:
     - appdirs
     - asteval
     - bw2analyzer
-    - bw2calc >=1.7.1
-    - bw2data >=3.4.1
-    - bw2io >=0.6
+    - bw2calc >=1.7.2
+    - bw2data >=3.4.3
+    - bw2io >=0.7.1
     - bw2parameters >=0.6.5
     - docopt
     - eight
@@ -50,9 +50,9 @@ requirements:
     - appdirs
     - asteval
     - bw2analyzer
-    - bw2calc >=1.7.1
-    - bw2data >=3.4.1
-    - bw2io >=0.6
+    - bw2calc >=1.7.2
+    - bw2data >=3.4.3
+    - bw2io >=0.7.1
     - bw2parameters >=0.6.5
     - docopt
     - eight
