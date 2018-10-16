@@ -20,6 +20,7 @@ requirements:
   build:
     - bw2calc >=1.7.2
     - bw2data >=3.4.3
+    - astunparse >=1.6.1
     - lxml
     - numpy
     - psutil
@@ -36,6 +37,7 @@ requirements:
   run:
     - bw2calc >=1.7.2
     - bw2data >=3.4.3
+    - astunparse >=1.6.1
     - lxml
     - numpy
     - psutil
