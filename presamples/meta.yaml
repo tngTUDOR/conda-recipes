@@ -1,6 +1,6 @@
 {% set name = "presamples" %}
-{% set version = "0.2.2" %}
-{% set sha256 = "85c5abc3b852e85ed0c493fd6b6a49f70ad42021bb374e03d4454df4773d0156" %}
+{% set version = "0.2.3" %}
+{% set sha256 = "91e20f9dcc3abf9d3e98ec11d6d0795b5c9409cc2bdc6fbbd387775594e3fb84" %}
 
 package:
   name: {{ name|lower }}
@@ -21,7 +21,7 @@ requirements:
     - astunparse >1.5.0
     - bw2calc >=1.7.3
     - bw2data >=3.4.3
-    - bw2parameters >=0.6.4
+    - bw2parameters >=0.6.6
     - numpy
     - peewee >3.0
     - scipy
@@ -34,7 +34,7 @@ requirements:
     - astunparse >1.5.0
     - bw2calc >=1.7.3
     - bw2data >=3.4.3
-    - bw2parameters >=0.6.4
+    - bw2parameters >=0.6.6
     - numpy
     - peewee >3.0
     - scipy
