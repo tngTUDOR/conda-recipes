@@ -1,6 +1,6 @@
 {% set name = "bw2data" %}
-{% set version = "3.4.3" %}
-{% set sha256 = "f052611c6bf4e029a28c9a4d5cfb0a3668abc885219aeb4bb437f726bb925b70" %}
+{% set version = "3.4.4" %}
+{% set sha256 = "c6891de561ec1b4259cc6af4e5e8c22788fe0ef11297fef792ed0f4159efc872" %}
 
 package:
   name: {{ name|lower }}
@@ -19,6 +19,7 @@ build:
 requirements:
   build:
     - appdirs
+    - astunparse >=1.6.1
     - bw2parameters
     - docopt
     - eight
@@ -41,6 +42,7 @@ requirements:
 
   run:
     - appdirs
+    - astunparse >=1.6.1
     - bw2parameters
     - docopt
     - eight
