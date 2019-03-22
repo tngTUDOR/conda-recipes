@@ -1,0 +1,44 @@
+{% set name = "entsoe-py" %}
+{% set version = "0.2.3" %}
+{% set sha256 = "89f4631e98d82e535a3bbeda31aa6269b33dd25266b57211b7651b482b6e5870" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  fn: {{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: {{ sha256 }}
+
+build:
+  noarch: python
+  number: 0
+  script: python setup.py install --single-version-externally-managed --record record.txt
+
+requirements:
+  build:
+    - beautifulsoup4
+    - pandas
+    - python
+    - pytz
+    - requests
+    - setuptools
+
+  run:
+    - beautifulsoup4
+    - pandas
+    - python
+    - pytz
+    - requests
+
+test:
+  imports:
+    - entsoe
+
+about:
+  home: https://github.com/EnergieID/entsoe-py
+  license: MIT
+  license_file: LICENSE
+  summary: 'Python client for the ENTSO-E API (european network of transmission system operators for electricity)'
+  dev_url: https://github.com/EnergieID/entsoe-py

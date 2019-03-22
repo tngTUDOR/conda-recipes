@@ -1,0 +1,45 @@
+{% set name = "bentso" %}
+{% set version = "0.1.1" %}
+{% set sha256 = "216e2e44734a854cf13857f93ebb6c0eeb750ae9de67142fa7b1e9b0d1b8278f" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  fn: {{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: {{ sha256 }}
+
+build:
+  noarch: python
+  number: 0
+  script: python setup.py install --single-version-externally-managed --record record.txt
+
+requirements:
+  build:
+    - python
+    - setuptools
+  run:
+    - python
+    - appdirs
+    - beautifulsoup4
+    - docopt
+    - entsoe-py
+    - pandas
+    - peewee
+    - pytest
+    - pytest-cov
+    - pytz
+    - requests
+
+test:
+  imports:
+    - bentso
+
+about:
+  home: https://github.com/BONSAMURAIS/bentso
+  license: BSD License
+  license_file: LICENSE
+  summary: 'BONSAI living model for European electricity via ENTSO-E API'
+license_family: BSD
