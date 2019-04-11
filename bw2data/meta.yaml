@@ -13,7 +13,7 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
@@ -27,7 +27,7 @@ requirements:
     - future
     - lxml
     - numpy
-    - peewee
+    - peewee >=3.6
     - psutil
     - pyprind
     - python
@@ -50,7 +50,7 @@ requirements:
     - future
     - lxml
     - numpy
-    - peewee
+    - peewee >=3.6
     - psutil
     - pyprind
     - python
