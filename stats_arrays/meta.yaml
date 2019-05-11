@@ -1,6 +1,6 @@
 {% set name = "stats_arrays" %}
-{% set version = "0.5" %}
-{% set sha256 = "ecac31d4a27f680cf411aef168e7411d05909b1153bf4368a3ba0747df53d539" %}
+{% set version = "0.5.1" %}
+{% set sha256 = "d87ae447fb85777f9f5acad2c22341fa2ef08f587baf476527fb885b92672731" %}
 
 package:
   name: {{ name|lower }}
