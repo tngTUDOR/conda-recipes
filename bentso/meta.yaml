@@ -1,6 +1,6 @@
 {% set name = "bentso" %}
-{% set version = "0.2.2" %}
-{% set sha256 = "c881b1666dceb1c171bdf898b8be735b0bf4fed09729f35062dabd9b3cfc40f4" %}
+{% set version = "0.3" %}
+{% set sha256 = "7787587f17cf5abd744e75d33f1113c7749db0535edc79eec78b888254dd7d00" %}
 
 package:
   name: {{ name|lower }}
