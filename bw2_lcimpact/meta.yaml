@@ -12,30 +12,14 @@ source:
 
 build:
   # Build command: conda build -c conda-forge -c cmutel -c konstantinstadler bw2_lcimpact
-  noarch_python: True
-  number: 0
+  noarch: python
+  number: 3
   script: python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
   build:
     - python
     - setuptools
-    - brightway2
-    - bw2calc >=1.2
-    - bw2data >=2.0
-    - bw2regional >=0.5.1
-    - constructive_geometries
-    - eight
-    - fiona
-    - pandas
-    - pandarus >=1.0
-    - python
-    - requests
-    - rower
-    - setuptools
-    - stats_arrays
-    - voluptuous
-    - wrapt
 
   run:
     - python
