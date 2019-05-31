@@ -1,6 +1,6 @@
 {% set name = "wurst" %}
-{% set version = "0.1.2" %}
-{% set sha256 = "7383f4a2d98834365f1765da1253543ed32da84d241bedd73bc134817b049e85" %}
+{% set version = "0.2" %}
+{% set sha256 = "d706a7f072b059057837f65747870a6cc36bfed4cf8331e2a182b31b4c2685c6" %}
 
 package:
   name: {{ name|lower }}
@@ -21,18 +21,6 @@ requirements:
   build:
     - python
     - setuptools
-    - appdirs
-    - constructive_geometries
-    - country_converter
-    - docopt
-    - fiona
-    - numpy
-    - pandas
-    - python-json-logger
-    - shapely
-    - tqdm
-    - wrapt
-
 
   run:
     - python
@@ -45,6 +33,7 @@ requirements:
     - pandas
     - python-json-logger
     - shapely
+    - toolz
     - tqdm
     - wrapt
 
