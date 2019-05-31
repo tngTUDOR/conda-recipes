@@ -1,0 +1,35 @@
+{% set name = "correspondentia" %}
+{% set version = "0.1" %}
+{% set sha256 = "86a2163b1108c3a59312b7d0f99eac4dd4a6137b73aa400d607667bf1e40ec21" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  fn: {{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: {{ sha256 }}
+
+build:
+  noarch: python
+  number: 0
+  script: python setup.py install --single-version-externally-managed --record record.txt
+
+requirements:
+  build:
+    - python
+    - setuptools
+  run:
+    - python
+
+test:
+  imports:
+    - correspondentia
+
+about:
+  home: https://github.com/BONSAMURAIS/correspondentia
+  license: BSD License
+  license_file: LICENSE
+  summary: 'Apply correspondence tables in various formats to Python data structures'
+license_family: BSD
