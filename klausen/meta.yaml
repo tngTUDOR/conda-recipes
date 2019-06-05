@@ -1,0 +1,36 @@
+{% set name = "klausen" %}
+{% set version = "0.1.1" %}
+{% set sha256 = "3c868acc525dc91b2e62f91fe19659c5983afe9b3d2974f080f772a2bf036d7f" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  fn: {{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: {{ sha256 }}
+
+build:
+  noarch: python
+  number: 0
+  script: python setup.py install --single-version-externally-managed --record record.txt
+
+requirements:
+  build:
+    - python
+    - setuptools
+  run:
+    - python
+    - stats_arrays
+
+test:
+  imports:
+    - klausen
+
+about:
+  home: https://github.com/cmutel/klausen/
+  license: BSD License
+  license_file: LICENSE
+  summary: 'Parameterized model framework in Python'
+  license_family: BSD
