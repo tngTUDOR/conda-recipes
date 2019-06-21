@@ -18,15 +18,6 @@ build:
 
 requirements:
   build:
-    - astunparse >1.5.0
-    - bw2calc >=1.7.3
-    - bw2data >=3.4.3
-    - bw2parameters >=0.6.6
-    - numpy
-    - peewee >3.0
-    - scipy
-    - stats_arrays
-    - wrapt
     - python
     - setuptools
 
@@ -46,9 +37,9 @@ test:
     - {{ name }}
 
 about:
-  home: https://github.com/PascalLesage/brightway2-presamples
+  home: https://github.com/PascalLesage/presamples/
   license: BSD 3-Clause
   license_file: LICENSE
-  summary: 'This is a package for the creation and use of presampled values in Monte Carlo for Brightway LCA framework.'
+  summary: 'Package to write, load, manage and verify numerical arrays, called presamples'
   license_family: BSD
-  dev_url: https://github.com/PascalLesage/brightway2-presamples
+  dev_url: https://github.com/PascalLesage/presamples/
