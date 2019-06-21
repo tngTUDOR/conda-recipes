@@ -1,6 +1,6 @@
 {% set name = "bw2data" %}
-{% set version = "3.4.5" %}
-{% set sha256 = "f6e51f419bcded8a46c096d8260a75949614337de004df9662757877337704d9" %}
+{% set version = "3.5" %}
+{% set sha256 = "8b16ee7a79b8e0e255c7e2c18d31df0357e316450c6fbe60f6fd2470331a9be6" %}
 
 package:
   name: {{ name|lower }}
@@ -18,27 +18,8 @@ build:
 
 requirements:
   build:
-    - appdirs
-    - astunparse >=1.6.1
-    - bw2parameters
-    - docopt
-    - eight
-    - fasteners
-    - future
-    - lxml
-    - numpy
-    - peewee >=3.6
-    - psutil
-    - pyprind
     - python
-    - requests
-    - scipy
     - setuptools
-    - stats_arrays
-    - unicodecsv
-    - voluptuous
-    - whoosh
-    - wrapt
 
   run:
     - appdirs
