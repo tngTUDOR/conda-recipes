@@ -1,6 +1,6 @@
 {% set name = "bw2io" %}
-{% set version = "0.7.4" %}
-{% set sha256 = "58f902c6c08bb2541d1dc296d5a1f3272a792636948d4f678595c17e1fc495df" %}
+{% set version = "0.7.6" %}
+{% set sha256 = "29039ea3dfe8857900e2b754f87832e93678336e58ea94cf85dd39617605a5af" %}
 
 package:
   name: {{ name|lower }}
@@ -18,21 +18,8 @@ build:
 
 requirements:
   build:
-    - bw2calc >=1.7.2
-    - bw2data >=3.4.3
-    - astunparse >=1.6.1
-    - lxml
-    - numpy
-    - psutil
-    - pyprind
     - python
-    - scipy
     - setuptools
-    - stats_arrays >=0.5
-    - unidecode
-    - voluptuous
-    - xlrd
-    - xlsxwriter
 
   run:
     - bw2calc >=1.7.2
