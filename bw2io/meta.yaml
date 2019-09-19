@@ -1,6 +1,6 @@
 {% set name = "bw2io" %}
-{% set version = "0.7.7" %}
-{% set sha256 = "d35ddc60c75a46896866cdf92ff879921ac70eb86a2d5675ae3cb69cad721dbe" %}
+{% set version = "0.7.8" %}
+{% set sha256 = "6897148c99b9f1acb2fbf035c6f07f081def23bddbf908ece22d2fc999473edb" %}
 
 package:
   name: {{ name|lower }}
@@ -22,7 +22,7 @@ requirements:
     - setuptools
 
   run:
-    - bw2calc >=1.7.4
+    - bw2calc >=1.7.5
     - bw2data >=3.5.1
     - astunparse >=1.6.1
     - lxml
