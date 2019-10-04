@@ -31,7 +31,7 @@ requirements:
     - future
     - lxml
     - numpy
-    - peewee >=3.6
+    - peewee >=3.9.4
     - psutil
     - pyprind
     - python
