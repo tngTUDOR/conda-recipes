@@ -1,6 +1,6 @@
 {% set name = "bw2data" %}
-{% set version = "3.5.1" %}
-{% set sha256 = "0928dbf52cf2369e9b5e95d774c07517ffabafcecf4e37772e2c9c48844817a1" %}
+{% set version = "3.6" %}
+{% set sha256 = "c50721093dd9fa257fe44cbdb5ccf3e06eb040e306fa245b0dabe263641225eb" %}
 
 package:
   name: {{ name|lower }}
@@ -13,7 +13,7 @@ source:
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
