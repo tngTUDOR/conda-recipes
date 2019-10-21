@@ -1,0 +1,43 @@
+{% set name = "perdu" %}
+{% set version = "0.1" %}
+{% set sha256 = "d43d566ed90cadb0984c53ec1e71c12f2d13600c126c0bffa23e96c570ec8d88" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  fn: {{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: {{ sha256 }}
+
+build:
+  noarch: python
+  number: 0
+  script: python setup.py install --single-version-externally-managed --record record.txt
+
+requirements:
+  build:
+    - python
+    - setuptools
+
+  run:
+    - appdirs
+    - docopt
+    - flask
+    - peewee
+    - python
+    - rdflib
+    - rdflib-jsonld
+    - whoosh
+
+test:
+  imports:
+    - {{ name }}
+
+about:
+  home: https://github.com/cmutel/perdu
+  license: BSD 3-Clause
+  license_file: LICENSE
+  summary: 'Python library and webapp for searching standard industry and product classifiers'
+  license_family: BSD
