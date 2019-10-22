@@ -1,0 +1,38 @@
+{% set name = "brightway_projects" %}
+{% set version = "0.1.dev1" %}
+{% set sha256 = "53ebac5d532cb703b9995dcc7b7c4e4e2da6686a8b59fdadc3d8e7009831b4db" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  fn: {{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: {{ sha256 }}
+
+build:
+  noarch: python
+  number: 0
+  script: python setup.py install --single-version-externally-managed --record record.txt
+
+requirements:
+  build:
+    - python
+    - setuptools
+
+  run:
+    - python
+    - appdirs
+    - peewee
+
+test:
+  imports:
+    - {{ name }}
+
+about:
+  home: https://github.com/brightway-lca/brightway_projects
+  license: BSD 3-Clause
+  license_file: LICENSE.txt
+  summary: 'Manager for Brightway LCA libraries and projects'
+  license_family: BSD
