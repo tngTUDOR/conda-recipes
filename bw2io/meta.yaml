@@ -1,6 +1,6 @@
 {% set name = "bw2io" %}
-{% set version = "0.7.10" %}
-{% set sha256 = "ecc9b560880a92f92b5d0c9ae48e60d1f31ab202afa49b341d5333906282ee7e" %}
+{% set version = "0.7.11" %}
+{% set sha256 = "0434af01609c687c2f540782b0dcc9afc86ba261854d9651da2e56870e5045b9" %}
 
 package:
   name: {{ name|lower }}
