@@ -1,0 +1,37 @@
+{% set name = "bw_migrations" %}
+{% set version = "0.1" %}
+{% set sha256 = "5a568fc157735b383bd4fc45ddf739e1a2029cafbe764eb84c9b302a4e52b4d1" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  fn: {{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: {{ sha256 }}
+
+build:
+  noarch: python
+  number: 0
+  script: python setup.py install --single-version-externally-managed --record record.txt
+
+requirements:
+  build:
+    - python
+    - setuptools
+
+  run:
+    - stats_arrays
+    - python
+
+test:
+  imports:
+    - {{ name }}
+
+about:
+  home: https://github.com/brightway-lca/bw_migrations
+  license: BSD 3-Clause
+  license_file: LICENSE
+  summary: 'Migration data and utilities for Brightway IO and LCA in general'
+  license_family: BSD

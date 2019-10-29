@@ -1,0 +1,36 @@
+{% set name = "mrio_common_metadata" %}
+{% set version = "0.1.1" %}
+{% set sha256 = "38b2c4949b4841dbc202fad537f54d2d694ca584a51e79f4ea42a9df6116958f" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  fn: {{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: {{ sha256 }}
+
+build:
+  noarch: python
+  number: 0
+  script: python setup.py install --single-version-externally-managed --record record.txt
+
+requirements:
+  build:
+    - python
+    - setuptools
+
+  run:
+    - python
+
+test:
+  imports:
+    - {{ name }}
+
+about:
+  home: https://github.com/brightway-lca/mrio_common_metadata
+  license: BSD 3-Clause
+  license_file: LICENSE
+  summary: 'Common Datapackage schema and utilities for MRIO tables'
+  license_family: BSD
