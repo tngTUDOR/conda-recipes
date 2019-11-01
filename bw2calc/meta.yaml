@@ -1,6 +1,6 @@
 {% set name = "bw2calc" %}
-{% set version = "1.7.7" %}
-{% set sha256 = "4a29781811c581bea5a788ec31b0eb20be0369330c380721cfa195f16b24d8fd" %}
+{% set version = "1.7.8" %}
+{% set sha256 = "e677c7f2803764067ac91b173ac2345c880f26a1d56f803e9ed286e07d08d80f" %}
 
 package:
   name: {{ name|lower }}
