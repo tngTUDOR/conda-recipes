@@ -1,6 +1,6 @@
 {% set name = "bw2regional" %}
-{% set version = "0.5.1" %}
-{% set sha256 = "9a75f967cb4cb29d234153aff818adb3e023faffdc87cb1ea85235d855005325" %}
+{% set version = "0.5.2" %}
+{% set sha256 = "6eaf131c50762508390f0695ccc501863abd2100136519f3249260193c74bb6d" %}
 
 package:
   name: {{ name|lower }}
