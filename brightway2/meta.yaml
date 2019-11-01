@@ -13,54 +13,29 @@ source:
 
 build:
   noarch: python
-  number: 1
+  number: 2
   script: python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
   build:
-    - appdirs
-    - asteval
-    - bw2analyzer
-    - bw2calc >=1.7.2
-    - bw2data >=3.4.3
-    - bw2io >=0.7.1
-    - bw2parameters >=0.6.5
-    - docopt
-    - eight
-    - flask
-    - future
-    - lxml
-    - numpy
-    - peewee >3.0
-    - psutil
-    - pypardiso
-    - pyprind
     - python
-    - requests
-    - scipy
     - setuptools
-    - stats_arrays
-    - unicodecsv
-    - voluptuous
-    - whoosh
-    - xlrd
-    - xlsxwriter
 
   run:
     - appdirs
     - asteval
-    - bw2analyzer
-    - bw2calc >=1.7.2
-    - bw2data >=3.4.3
-    - bw2io >=0.7.1
-    - bw2parameters >=0.6.5
+    - bw2analyzer >=0.9.4
+    - bw2calc >=1.7.8
+    - bw2data >=3.6.1
+    - bw2io >=0.7.11.3
+    - bw2parameters >=0.6.6
     - docopt
     - eight
     - flask
     - future
     - lxml
     - numpy
-    - peewee >3.0
+    - peewee >=3.9.4
     - psutil
     - pypardiso
     - pyprind
@@ -73,6 +48,8 @@ requirements:
     - whoosh
     - xlrd
     - xlsxwriter
+    - mrio_common_metadata
+    - bw_migrations
 
 test:
   imports:
