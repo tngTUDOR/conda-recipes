@@ -1,0 +1,42 @@
+{% set name = "bw_calc" %}
+{% set version = "0.1" %}
+{% set sha256 = "15bdca6aeee0888225cfaaf48844da9d57a288d4aa4eed87f0d9843fa1118280" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  fn: {{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: {{ sha256 }}
+
+build:
+  noarch: python
+  number: 1
+  script: python setup.py install --single-version-externally-managed --record record.txt
+
+requirements:
+  build:
+    - python
+    - setuptools
+
+  run:
+    - numpy
+    - pypardiso
+    - python
+    - scipy
+    - stats_arrays
+
+test:
+  imports:
+    - {{ name }}
+
+about:
+  home: https://github.com/brightway-lca/bw_calc
+  license: BSD 3-Clause
+  license_file: LICENSE
+  summary: 'Matrix calculations for Brightway framework'
+  license_family: BSD
+  doc_url: https://3.docs.brightwaylca.org/
+  dev_url: https://github.com/brightway-lca/bw_calc

@@ -1,0 +1,40 @@
+{% set name = "bw_processing" %}
+{% set version = "0.1" %}
+{% set sha256 = "f64c1cdcb336c77120458ca0847e29f4d73b93e11dcd7e4c72e6e765959efa7c" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  fn: {{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: {{ sha256 }}
+
+build:
+  noarch: python
+  number: 0
+  script: python setup.py install --single-version-externally-managed --record record.txt
+
+requirements:
+  build:
+    - python
+    - setuptools
+
+  run:
+    - bw_projects
+    - numpy
+    - python
+
+test:
+  imports:
+    - {{ name }}
+
+about:
+  home: https://github.com/brightway-lca/bw_processing
+  license: BSD 3-Clause
+  license_file: LICENSE
+  summary: 'Tools to create structured arrays in a common format'
+  license_family: BSD
+  doc_url: https://3.docs.brightwaylca.org/
+  dev_url: https://github.com/brightway-lca/bw_processing
