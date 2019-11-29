@@ -1,6 +1,6 @@
 {% set name = "perdu" %}
-{% set version = "0.1.1" %}
-{% set sha256 = "2a53a2dae0fa76f3750e4a0a418674f01f421b5481be2c66b6d5a4216843a507" %}
+{% set version = "0.2" %}
+{% set sha256 = "9106e8f6097e6b6e450c0da5e43e930c952fb596bb7dc44723f9c270f891a0b8" %}
 
 package:
   name: {{ name|lower }}
@@ -25,11 +25,13 @@ requirements:
     - appdirs
     - docopt
     - flask
+    - pandas
     - peewee
     - python
     - rdflib
     - rdflib-jsonld
     - whoosh
+    - xlrd
 
 test:
   imports:
