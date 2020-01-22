@@ -1,6 +1,6 @@
 {% set name = "bw_processing" %}
-{% set version = "0.1" %}
-{% set sha256 = "f64c1cdcb336c77120458ca0847e29f4d73b93e11dcd7e4c72e6e765959efa7c" %}
+{% set version = "0.1.1" %}
+{% set sha256 = "2ef0f156aea6c754aaa57c959e3369f606c737993f70efad1762e3f90ac58a93" %}
 
 package:
   name: {{ name|lower }}
@@ -22,7 +22,6 @@ requirements:
     - setuptools
 
   run:
-    - bw_projects
     - numpy
     - python
 
