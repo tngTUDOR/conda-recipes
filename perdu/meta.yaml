@@ -1,6 +1,6 @@
 {% set name = "perdu" %}
-{% set version = "0.2" %}
-{% set sha256 = "9106e8f6097e6b6e450c0da5e43e930c952fb596bb7dc44723f9c270f891a0b8" %}
+{% set version = "0.2.1" %}
+{% set sha256 = "ad7e0dc431173d661e291b5e2f7266a36f7bba8ea7849cf873e9df82d96db1d2" %}
 
 package:
   name: {{ name|lower }}
