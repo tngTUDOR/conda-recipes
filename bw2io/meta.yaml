@@ -1,6 +1,6 @@
 {% set name = "bw2io" %}
-{% set version = "0.7.12.1" %}
-{% set sha256 = "ccefefdc36758b7794acb29de1b2ec96b14b45928be13e77ebbf32f5ba64e49f" %}
+{% set version = "0.8.0" %}
+{% set sha256 = "2963302aa9d32a04b677d9d6f093aa8db725ad2dcad7f117a482d37c2ddbef69" %}
 
 package:
   name: {{ name|lower }}
@@ -27,6 +27,7 @@ requirements:
     - astunparse >=1.6.1
     - lxml
     - numpy
+    - openpyxl
     - psutil
     - pyprind
     - python
