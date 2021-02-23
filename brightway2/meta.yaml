@@ -18,15 +18,15 @@ build:
 
 requirements:
   build:
-    - python
+    - python >=3.9
     - setuptools
 
   run:
     - appdirs
     - asteval
     - bw2analyzer >=0.9.4
-    - bw2calc >=1.7.8
-    - bw2data >=3.6.1
+    - bw2calc >=1.8.0
+    - bw2data >=3.6.2
     - bw2io >=0.8.0
     - bw2parameters >=0.6.6
     - docopt
