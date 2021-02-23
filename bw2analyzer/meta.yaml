@@ -38,7 +38,7 @@ test:
     - {{ name }}
 
 about:
-  home: https://bitbucket.org/cmutel/brightway2-analyzer
+  home: https://github.com/brightway-lca/brightway2-analyzer
   license: BSD 3-Clause
   license_file: LICENSE.txt
   summary: 'Interpretation and other tools for Brightway2 LCA framework'

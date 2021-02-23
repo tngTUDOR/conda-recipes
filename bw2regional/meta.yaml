@@ -58,7 +58,7 @@ test:
     - {{ name }}
 
 about:
-  home: https://bitbucket.org/cmutel/brightway2-regional
+  home: https://github.com/brightway-lca/brightway2-regional
   license: BSD License
   license_family: BSD
   license_file: LICENSE.txt

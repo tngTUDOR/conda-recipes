@@ -13,7 +13,7 @@ source:
 
 build:
   noarch: python
-  number: 2
+  number: 3
   script: python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
@@ -27,7 +27,7 @@ requirements:
     - bw2analyzer >=0.9.4
     - bw2calc >=1.7.8
     - bw2data >=3.6.1
-    - bw2io >=0.7.11.3
+    - bw2io >=0.8.0
     - bw2parameters >=0.6.6
     - docopt
     - eight
@@ -35,6 +35,7 @@ requirements:
     - future
     - lxml
     - numpy
+    - openpyxl
     - peewee >=3.9.4
     - psutil
     - pypardiso
@@ -56,7 +57,7 @@ test:
     - {{ name }}
 
 about:
-  home: https://bitbucket.org/cmutel/brightway2
+  home: https://github.com/brightway-lca/brightway2
   license: BSD License
   summary: 'Open source framework for life cycle assessment'
   license_family: BSD

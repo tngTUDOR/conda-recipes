@@ -53,5 +53,5 @@ about:
   license_file: LICENSE.txt
   summary: 'Data management for the Brightway2 life cycle assessment framework'
   license_family: BSD
-  doc_url: https://docs.brightwaylca.org/
-  dev_url: https://bitbucket.org/cmutel/brightway2-data/
+  doc_url: https://docs.brightway.dev
+  dev_url: https://github.com/brightway-lca/brightway2-data/

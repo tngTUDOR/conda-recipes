@@ -77,7 +77,7 @@ test:
     # - nose
 
 about:
-  home: https://bitbucket.org/cmutel/brightway2-temporalis
+  home: https://github.com/brightway-lca/temporalis
   license: BSD License
   summary: 'Provide a dynamic LCA calculations for the Brightway2 life cycle assessment framework'
   license_family: BSD

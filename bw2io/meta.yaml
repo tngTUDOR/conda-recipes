@@ -55,5 +55,5 @@ about:
   license_file: LICENSE.txt
   summary: 'Tools for importing and export life cycle inventory databases'
   license_family: BSD
-  doc_url: https://docs.brightwaylca.org/
-  dev_url: https://bitbucket.org/cmutel/brightway2-io
+  doc_url: https://docs.brightway.dev
+  dev_url: https://github.com/brightway-lca/brightway2-io

@@ -37,4 +37,4 @@ about:
   summary: 'The stats_arrays package provides a standard NumPy array interface for defining uncertain parameters used in models, and classes for Monte Carlo sampling.'
   license_family: BSD
   doc_url: http://stats-arrays.readthedocs.io/en/latest/
-  dev_url: https://bitbucket.org/cmutel/stats_arrays
+  dev_url: https://github.com/brightway-lca/stats_arrays
