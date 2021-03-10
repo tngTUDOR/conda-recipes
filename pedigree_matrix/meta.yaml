@@ -1,0 +1,37 @@
+{% set name = "pedigree_matrix" %}
+{% set version = "0.2.2" %}
+{% set sha256 = "5fcb110f595a087f6a269eb74dc67f79471eabd79fa191d77116023f17fcdc85" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  fn: {{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: {{ sha256 }}
+
+build:
+  noarch: python
+  number: 0
+  script: python setup.py install --single-version-externally-managed --record record.txt
+
+requirements:
+  build:
+    - python
+    - setuptools
+
+  run:
+    - python
+
+test:
+  imports:
+    - {{ name }}
+
+about:
+  home: https://github.com/brightway-lca/pedigree_matrix
+  license: BSD 3-Clause
+  license_file: LICENSE
+  summary: 'Implementation of pedigree matrix approaches to adapting probability distributions to new circumstances'
+  license_family: BSD
+  dev_url: https://github.com/brightway-lca/pedigree_matrix
