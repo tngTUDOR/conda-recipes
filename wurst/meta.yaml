@@ -1,6 +1,6 @@
 {% set name = "wurst" %}
-{% set version = "0.2.2" %}
-{% set sha256 = "da7b5c6c0d7f3acd7fcc30992254c15727b7c05b464242956bac7bf48d546796" %}
+{% set version = "0.3" %}
+{% set sha256 = "61ebbac2dc070e26fa4ae120f4291fbbb012b93fb0c9a114a4e79ca63ec24907" %}
 
 package:
   name: {{ name|lower }}
@@ -13,6 +13,7 @@ source:
 
 build:
   # build command: conda build -c konstantinstadler -c cmutel -c conda-forge wurst
+  # build command if errors: conda build -c konstantinstadler -c cmutel -c conda-forge wurst --numpy 1.20 --python 3.9
   noarch: python
   number: 0
   script: python setup.py install --single-version-externally-managed --record record.txt
@@ -42,12 +43,12 @@ test:
     - {{ name }}
 
 about:
-  home: https://github.com/IndEcol/wurst
+  home: https://github.com/polca/wurst
   license: BSD 3-Clause
   license_file: LICENSE
   summary: 'Code and metadata for linking life cycle assessment databases to other models'
   license_family: BSD
   doc_url: https://wurst.readthedocs.io/
-  dev_url: https://github.com/IndEcol/wurst
+  dev_url: https://github.com/polca/wurst
 
 
