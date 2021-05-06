@@ -1,6 +1,6 @@
 {% set name = "bw2analyzer" %}
-{% set version = "0.9.4" %}
-{% set sha256 = "10500d47b85cd6c4ffe47ca983fd48ca6e87b04aca1fea39c5114334ea4b820a" %}
+{% set version = "0.10" %}
+{% set sha256 = "7148b1b81aaf8e8bc776acf869ce0e8db710fc572a603926368e2e16fd00028e" %}
 
 package:
   name: {{ name|lower }}
@@ -13,7 +13,7 @@ source:
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
@@ -24,14 +24,16 @@ requirements:
   run:
     - bw2calc
     - bw2data
+    - eight
     - matplotlib-base
     - numpy
+    - pandas
     - pyprind
-    - stats_arrays
-    - eight
     - python
     - requests
     - scipy
+    - stats_arrays
+    - tabulate
 
 test:
   imports:
