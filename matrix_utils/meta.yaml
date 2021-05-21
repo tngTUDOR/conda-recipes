@@ -1,0 +1,49 @@
+{% set name = "matrix_utils" %}
+{% set version = "0.1" %}
+{% set sha256 = "ee4a75b31ad4cb93db405e62390f1fe7b19fcb7c8331f5ce872e8bb70f0d9c6c" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  fn: {{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: {{ sha256 }}
+
+build:
+  noarch: python
+  number: 1
+  script: python setup.py install --single-version-externally-managed --record record.txt
+  # Conda-forge conda build pins a specific python ABI to help distinguish
+  # cpython from pypy. This *shouldn't* apply to noarch packages, but...
+  # Suggestion from https://github.com/conda/conda-build/issues/3956#issuecomment-631800846
+  # to block this inclusion. Ugly but seems to work.
+  ignore_run_exports:
+    - python_abi
+
+requirements:
+  build:
+    - python
+    - setuptools
+
+  run:
+    - numpy
+    - python
+    - scipy
+    - pandas
+    - bw_processing
+    - stats_arrays
+
+test:
+  imports:
+    - {{ name }}
+
+about:
+  home: https://github.com/brightway-lca/matrix_utils
+  license: BSD 3-Clause
+  license_file: LICENSE
+  summary: 'Utilities to build and iterate on matrices using datapackages '
+  license_family: BSD
+  doc_url: https://3.docs.brightwaylca.org/
+  dev_url: https://github.com/brightway-lca/matrix_utils
