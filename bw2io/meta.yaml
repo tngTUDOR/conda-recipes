@@ -20,12 +20,12 @@ build:
 
 requirements:
   build:
-    - python >=3.9
+    - python
     - setuptools
 
   run:
-    - bw2calc >=1.7.5
-    - bw2data >=3.5.1
+    - bw2calc >=1.8.0
+    - bw2data <3.9
     - astunparse >=1.6.1
     - lxml
     - numpy
@@ -34,7 +34,7 @@ requirements:
     - pyprind
     - python
     - scipy
-    - stats_arrays >=0.5
+    - stats_arrays >=0.6.5
     - unidecode
     - voluptuous
     - xlrd
