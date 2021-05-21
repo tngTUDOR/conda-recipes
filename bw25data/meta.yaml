@@ -1,0 +1,56 @@
+{% set name = "bw2data" %}
+{% set version = "4.0.dev1" %}
+{% set sha256 = "515c312617dff7448663f5a784f87196ad2105206586f9093f8b580ad87c9ad2" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  fn: {{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: {{ sha256 }}
+
+build:
+  noarch: python
+  number: 0
+  script: python setup.py install --single-version-externally-managed --record record.txt
+  ignore_run_exports:
+    - python_abi
+
+requirements:
+  build:
+    - python >=3.9
+    - setuptools
+
+  run:
+    - appdirs >=1.4.4
+    - bw2parameters >=0.6.6
+    - bw_processing >=0.3
+    - docopt >=0.6.2
+    - fasteners >=0.14.1
+    - lxml >=4.6
+    - numpy >=1.20
+    - peewee >=3.14.4
+    - psutil >=5.8
+    - pyprind >=2.11
+    - python >=3.9
+    - requests >=2.25
+    - scipy >=1.6
+    - stats_arrays >=0.6.5
+    - voluptuous >=0.12
+    - whoosh
+    - wrapt >=1.12
+
+test:
+  imports:
+    - {{ name }}
+
+about:
+  home: https://brightway.dev/
+  license: BSD 3-Clause
+  license_file: LICENSE.txt
+  summary: 'Data management for the Brightway v2.5 life cycle assessment framework'
+  license_family: BSD
+  doc_url: https://docs.brightway.dev
+  dev_url: https://github.com/brightway-lca/brightway2-data/
