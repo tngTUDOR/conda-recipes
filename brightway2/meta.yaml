@@ -13,44 +13,28 @@ source:
 
 build:
   noarch: python
-  number: 3
+  number: 4
   script: python setup.py install --single-version-externally-managed --record record.txt
+  ignore_run_exports:
+    - python_abi
 
 requirements:
   build:
-    - python >=3.9
+    - python
     - setuptools
 
   run:
-    - appdirs
-    - asteval
-    - bw2analyzer >=0.9.4
+    - asteval >=0.9.22
+    - bw2analyzer >=0.10.0
     - bw2calc >=1.8.0
-    - bw2data >=3.6.2
-    - bw2io >=0.8.0
+    - bw2data <3.9
+    - bw2io >=0.8.3.1
     - bw2parameters >=0.6.6
-    - docopt
-    - eight
-    - flask
-    - future
-    - lxml
-    - numpy
-    - openpyxl
-    - peewee >=3.9.4
-    - psutil
+    - numpy >=1.20
+    - "libblas=*=*mkl"
     - pypardiso
-    - pyprind
     - python
-    - requests
-    - scipy
-    - stats_arrays
-    - unicodecsv
-    - voluptuous
-    - whoosh
-    - xlrd
-    - xlsxwriter
-    - mrio_common_metadata
-    - bw_migrations
+    - stats_arrays >=0.6.5
 
 test:
   imports:
