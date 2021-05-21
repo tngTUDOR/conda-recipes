@@ -1,6 +1,6 @@
 {% set name = "bw_processing" %}
-{% set version = "0.1.2" %}
-{% set sha256 = "9c95ead660fbfd59a03b1c002195f846ba0083b3bda579a23790af6a0d64f129" %}
+{% set version = "0.3" %}
+{% set sha256 = "d4e58da53fbd6852f23e577d0c6188641f6677255505ef33e2c2ab7da4a906ab" %}
 
 package:
   name: {{ name|lower }}
@@ -13,8 +13,14 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: python setup.py install --single-version-externally-managed --record record.txt
+  # Conda-forge conda build pins a specific python ABI to help distinguish
+  # cpython from pypy. This *shouldn't* apply to noarch packages, but...
+  # Suggestion from https://github.com/conda/conda-build/issues/3956#issuecomment-631800846
+  # to block this inclusion. Ugly but seems to work.
+  ignore_run_exports:
+    - python_abi
 
 requirements:
   build:
@@ -24,6 +30,8 @@ requirements:
   run:
     - numpy
     - python
+    - pandas
+    - fs
 
 test:
   imports:
