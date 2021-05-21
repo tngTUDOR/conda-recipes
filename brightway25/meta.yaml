@@ -1,0 +1,49 @@
+{% set name = "brightway25" %}
+{% set version = "1.0" %}
+{% set sha256 = "" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  fn: {{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: {{ sha256 }}
+
+build:
+  noarch: python
+  number: 0
+  script: python setup.py install --single-version-externally-managed --record record.txt
+  ignore_run_exports:
+    - python_abi
+
+requirements:
+  build:
+    - python >=3.9
+    - setuptools
+
+  run:
+    - asteval >=0.9.22
+    - bw2analyzer >=0.10.0
+    - bw2calc >=1.8.0
+    - bw2data >=4.0.dev1
+    - bw2io >=0.8.3.1
+    - bw2parameters >=0.6.6
+    - bw_processing
+    - matrix_utils
+    - numpy >=1.20
+    - "libblas=*=*mkl"
+    - pypardiso
+    - python >=3.9
+    - stats_arrays >=0.6.5
+
+test:
+  imports:
+    - {{ name }}
+
+about:
+  home: https://github.com/brightway-lca/brightway25
+  license: BSD License
+  summary: 'Open source framework for life cycle assessment'
+  license_family: BSD
