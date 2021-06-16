@@ -1,6 +1,6 @@
 {% set name = "matrix_utils" %}
-{% set version = "0.1" %}
-{% set sha256 = "ee4a75b31ad4cb93db405e62390f1fe7b19fcb7c8331f5ce872e8bb70f0d9c6c" %}
+{% set version = "0.1.3" %}
+{% set sha256 = "215293ee1f67a997d66d268aa9138ddc832150912d47067707e160a1662f0e89" %}
 
 package:
   name: {{ name|lower }}
@@ -13,7 +13,7 @@ source:
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: python setup.py install --single-version-externally-managed --record record.txt
   # Conda-forge conda build pins a specific python ABI to help distinguish
   # cpython from pypy. This *shouldn't* apply to noarch packages, but...
@@ -32,7 +32,7 @@ requirements:
     - python
     - scipy
     - pandas
-    - bw_processing
+    - bw_processing >=0.3.1
     - stats_arrays
 
 test:
