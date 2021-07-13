@@ -1,6 +1,6 @@
 {% set name = "wurst" %}
-{% set version = "0.3" %}
-{% set sha256 = "61ebbac2dc070e26fa4ae120f4291fbbb012b93fb0c9a114a4e79ca63ec24907" %}
+{% set version = "0.3.1" %}
+{% set sha256 = "0bae67f99a86ca70282c82d9c08798a59e017ee1b5daca2f5001739758f064a5" %}
 
 package:
   name: {{ name|lower }}
