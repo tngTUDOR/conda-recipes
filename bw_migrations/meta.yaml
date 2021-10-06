@@ -1,6 +1,6 @@
 {% set name = "bw_migrations" %}
-{% set version = "0.1" %}
-{% set sha256 = "5a568fc157735b383bd4fc45ddf739e1a2029cafbe764eb84c9b302a4e52b4d1" %}
+{% set version = "0.2" %}
+{% set sha256 = "229d99a820cbcf18854ce6a3870552e8feebb89b9342abbafaa1a6d95a57dff9" %}
 
 package:
   name: {{ name|lower }}
@@ -24,6 +24,8 @@ requirements:
   run:
     - stats_arrays
     - python
+    - pandas
+    - bw2data
 
 test:
   imports:
