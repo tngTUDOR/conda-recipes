@@ -1,6 +1,6 @@
 {% set name = "bw2calc" %}
-{% set version = "1.8.0" %}
-{% set sha256 = "c94c6b6a56d2b74fd58bcc867a19735e9a472b8be1f06f0d8fb579eac7094133" %}
+{% set version = "2.0.dev2" %}
+{% set sha256 = "c23c10786f29a56232678a5a72467470178c296470532d5052fd05d954523b04" %}
 
 package:
   name: {{ name|lower }}
@@ -15,25 +15,33 @@ build:
   noarch: python
   number: 0
   script: python setup.py install --single-version-externally-managed --record record.txt
+  ignore_run_exports:
+    - python_abi
 
 requirements:
   build:
-    - python
+    - python >=3.9
     - setuptools
 
   run:
     - python
-    - eight
-    - numpy
+    - setuptools
+    - numpy >=1.20
     - scipy
     - stats_arrays
+    - bw_processing >=0.3.1
+    - matrix_utils >=0.1.3
 
 test:
+  requires:
+    - pytest
+    - bw2data >=4.0.dev4
+
   imports:
     - {{ name }}
 
 about:
-  home: https://brightwaylca.org/
+  home: https://brightway.dev/
   license: BSD 3-Clause
   license_file: LICENSE.txt
   summary: 'The calculation engine for the Brightway2 life cycle assessment framework'
