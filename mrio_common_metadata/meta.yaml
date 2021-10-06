@@ -1,6 +1,6 @@
 {% set name = "mrio_common_metadata" %}
-{% set version = "0.1.1" %}
-{% set sha256 = "38b2c4949b4841dbc202fad537f54d2d694ca584a51e79f4ea42a9df6116958f" %}
+{% set version = "0.2" %}
+{% set sha256 = "665165e9f1546090d425bc38783cfbcaeaf8d4eed61bbf19f06c8b280828bd08" %}
 
 package:
   name: {{ name|lower }}
@@ -23,6 +23,11 @@ requirements:
 
   run:
     - python
+    - pyxlsb
+    - xlrd
+    - pandas
+    - openpyxl
+    - scipy
 
 test:
   imports:
