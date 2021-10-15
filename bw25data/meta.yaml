@@ -1,6 +1,6 @@
 {% set name = "bw2data" %}
-{% set version = "4.0.dev4" %}
-{% set sha256 = "60587b083c944770a9ddcb27b34af359867179c051136f1c0eb94619052dce74" %}
+{% set version = "4.0.dev6" %}
+{% set sha256 = "6e5673b77e863f46c736d7c187f4ef91ae32c22cdfac2624700855a83b737211" %}
 
 package:
   name: {{ name|lower }}
