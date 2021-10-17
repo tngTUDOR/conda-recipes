@@ -13,7 +13,7 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: python setup.py install --single-version-externally-managed --record record.txt
   ignore_run_exports:
     - python_abi
@@ -26,8 +26,10 @@ requirements:
   run:
     - bw2analyzer >=0.10.0
     - bw2calc >=2.0.dev2
-    - bw2data >=4.0.dev4
-    - bw2io >=0.9.dev3
+    - bw2data >=4.0.dev6
+    - bw2io >=0.9.dev4
+    - bw_processing >=0.4
+    - matrix_utils >=0.1.3
     - mrio_common_metadata
     - bw_migrations
     - numpy
