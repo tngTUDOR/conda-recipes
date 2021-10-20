@@ -1,6 +1,6 @@
 {% set name = "bw2regional" %}
-{% set version = "0.5.2" %}
-{% set sha256 = "6eaf131c50762508390f0695ccc501863abd2100136519f3249260193c74bb6d" %}
+{% set version = "0.6.dev1" %}
+{% set sha256 = "ae7e5954a48923fc833ef75daf3699ec91ca8a620850b03794b7b46a895a63b7" %}
 
 package:
   name: {{ name|lower }}
@@ -19,37 +19,24 @@ build:
 
 requirements:
   build:
-    - appdirs
-    - bw2calc >=1.7.1
-    - bw2data >=3.4.2
-    - constructive_geometries
-    - eight
-    - fiona
-    - pandarus >=1.0.4
-    - pandas
-    - pyprind
-    - python
-    - requests
-    - rower
+    - python >=3.9
     - setuptools
-    - stats_arrays
-    - voluptuous
-    - wrapt
 
   run:
-    - appdirs
-    - bw2calc >=1.7.1
-    - bw2data >=3.4.2
+    - bw2calc >=2.0.dev2
+    - bw2data >=4.0.dev7
     - constructive_geometries
-    - eight
     - fiona
     - pandarus >=1.0.4
+    - matrix_utils >=0.1.4
     - pandas
+    - rasterio
+    - scipy
+    - shapely
     - pyprind
     - python
     - requests
-    - rower
-    - stats_arrays
+    - setuptools
     - voluptuous
     - wrapt
 
