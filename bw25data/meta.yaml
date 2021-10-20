@@ -1,6 +1,6 @@
 {% set name = "bw2data" %}
-{% set version = "4.0.dev6" %}
-{% set sha256 = "6e5673b77e863f46c736d7c187f4ef91ae32c22cdfac2624700855a83b737211" %}
+{% set version = "4.0.dev8" %}
+{% set sha256 = "4d737dd90a689bd4f32bf126aa34e893d9cd76126240b884578fc23fbaaa49fc" %}
 
 package:
   name: {{ name|lower }}
@@ -26,7 +26,7 @@ requirements:
   run:
     - appdirs >=1.4.4
     - bw2parameters >=0.6.6
-    - bw_processing >=0.3
+    - bw_processing >=0.4
     - docopt >=0.6.2
     - fasteners >=0.14.1
     - lxml >=4.6
