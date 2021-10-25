@@ -1,6 +1,6 @@
 {% set name = "bw2analyzer" %}
-{% set version = "0.10" %}
-{% set sha256 = "7148b1b81aaf8e8bc776acf869ce0e8db710fc572a603926368e2e16fd00028e" %}
+{% set version = "0.11.1" %}
+{% set sha256 = "b9a85ea4a2b80c3cb02e22e4c7856177a94d3d3b5763ff37a49262063a9dafd0" %}
 
 package:
   name: {{ name|lower }}
@@ -13,7 +13,7 @@ source:
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: python setup.py install --single-version-externally-managed --record record.txt
   ignore_run_exports:
     - python_abi
@@ -24,9 +24,8 @@ requirements:
     - setuptools
 
   run:
-    - bw2calc
-    - bw2data
-    - eight
+    - bw2calc >=2.0.dev3
+    - bw2data >=4.0.dev8
     - matplotlib-base
     - numpy
     - pandas
