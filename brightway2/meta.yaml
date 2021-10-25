@@ -1,6 +1,6 @@
 {% set name = "brightway2" %}
-{% set version = "2.3" %}
-{% set sha256 = "d4a6662bc7e6a41dcee6f8a478a070ba35269c0bd2bcbe59938acf239094e5c6" %}
+{% set version = "2.4.1" %}
+{% set sha256 = "0f0af59a0f74df6cb0446bb4ff71794712945d93ab51a83aaaaa85ef174b3588" %}
 
 package:
   name: {{ name|lower }}
@@ -13,7 +13,7 @@ source:
 
 build:
   noarch: python
-  number: 4
+  number: 0
   script: python setup.py install --single-version-externally-managed --record record.txt
   ignore_run_exports:
     - python_abi
@@ -25,10 +25,10 @@ requirements:
 
   run:
     - asteval >=0.9.22
-    - bw2analyzer >=0.10.0
-    - bw2calc >=1.8.0
-    - bw2data <3.9
-    - bw2io >=0.8.3.1
+    - bw2analyzer <0.10.99
+    - bw2calc <1.99
+    - bw2data <3.99
+    - bw2io <0.8.9
     - bw2parameters >=0.6.6
     - numpy >=1.20
     - "libblas=*=*mkl"
