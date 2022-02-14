@@ -1,6 +1,6 @@
 {% set name = "matrix_utils" %}
-{% set version = "0.1.4" %}
-{% set sha256 = "27e15ad0a996e97a129de06b6d54bc95e462b3e42e05de8dc582c1154c0968fd" %}
+{% set version = "0.2.3" %}
+{% set sha256 = "e1cba5a85ef6c83f476bf8f0e9c62ce79b286be1d832ed18b11bcb356c5f8f32" %}
 
 package:
   name: {{ name|lower }}
@@ -32,7 +32,7 @@ requirements:
     - python
     - scipy
     - pandas
-    - bw_processing >=0.4
+    - bw_processing >=0.7.1
     - stats_arrays
 
 test:
