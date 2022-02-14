@@ -1,6 +1,6 @@
 {% set name = "bw_processing" %}
-{% set version = "0.5" %}
-{% set sha256 = "77832ae2acb41f2d65ea4248551cdeab751380fc8161453684564fef4a5b2b6c" %}
+{% set version = "0.7.1" %}
+{% set sha256 = "55e11fc3a071b8d607a589f467eadf25e2e1bb29a11aa8e11706186b0c31da46" %}
 
 package:
   name: {{ name|lower }}
@@ -13,7 +13,7 @@ source:
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: python setup.py install --single-version-externally-managed --record record.txt
   # Conda-forge conda build pins a specific python ABI to help distinguish
   # cpython from pypy. This *shouldn't* apply to noarch packages, but...
